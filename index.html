@@ -7,7 +7,7 @@
     <meta name="description" content="Chuyên cung cấp PC Gaming, PC Văn Phòng, linh kiện máy tính và phụ kiện điện thoại chính hãng, giá tốt, bảo hành uy tín.">
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tailwind CSS CDN cho thiết kế hiện đại, responsive -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans antialiased">
@@ -25,9 +25,17 @@
                 <a href="#reviews" class="hover:text-cyan-400 transition">Đánh Giá</a>
                 <a href="#order" class="hover:text-cyan-400 transition">Liên Hệ</a>
             </nav>
-            <a href="#order" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-full font-medium shadow-lg shadow-cyan-500/20 transition">
-                Đặt Hàng Ngay
-            </a>
+            <div class="flex items-center space-x-4">
+                <!-- Nút mở Giỏ hàng -->
+                <button onclick="toggleCart()" class="relative bg-gray-800 hover:bg-gray-700 text-gray-200 px-4 py-2.5 rounded-full flex items-center space-x-2 transition border border-gray-700">
+                    <i class="fa-solid fa-cart-shopping text-cyan-400"></i>
+                    <span class="text-sm font-medium hidden sm:inline">Giỏ hàng</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-cyan-500 text-gray-950 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+                <a href="#order" class="hidden sm:inline-block bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-full font-medium shadow-lg shadow-cyan-500/20 transition">
+                    Đặt Hàng Ngay
+                </a>
+            </div>
         </div>
     </header>
 
@@ -46,7 +54,7 @@
                     Cung cấp hệ thống PC Gaming, PC đồ họa, linh kiện chính hãng cùng hệ sinh thái phụ kiện điện thoại cao cấp. Tối ưu hóa mọi trải nghiệm chiến game và làm việc của bạn.
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#order" class="inline-flex justify-center items-center bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition">
+                    <a href="#products" class="inline-flex justify-center items-center bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition">
                         <i class="fa-solid fa-cart-shopping mr-2"></i> Khám Phá Sản Phẩm
                     </a>
                     <a href="#features" class="inline-flex justify-center items-center bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-8 py-4 rounded-xl transition border border-gray-700">
@@ -82,7 +90,7 @@
                     <div class="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-face-frown"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Giá Cả Không Tương xứng</h3>
+                    <h3 class="text-xl font-bold mb-3">Giá Cả Không Tương Xứng</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Bị độn giá cao nhưng cấu hình thực tế không đáp ứng đủ nhu cầu công việc hoặc giải trí hiện tại.</p>
                 </div>
                 <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500/50 transition">
@@ -90,40 +98,82 @@
                         <i class="fa-solid fa-headset"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Thiếu Hỗ Trợ Sau Bán Hàng</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Khi máy tính hoặc phụ kiện gặp sự cố phần cứng/phần mềm nhưng không được bảo hành hoặc hỗ trợ kỹ thuật kịp thời.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Khi máy tính hoặc phụ kiện gặp sự cố phần cứng/phần mềm nhưng không được bảo hành hoặc hỗ trợ kịp thời.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOLUTIONS / SẢN PHẨM & GIẢI PHÁP -->
+    <!-- SOLUTIONS / SẢN PHẨM & CÓ THỂ THÊM VÀO GIỎ HÀNG -->
     <section id="products" class="py-20 bg-gray-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Hệ Sinh Thái Sản Phẩm Tại Zynix</h2>
-                <p class="text-gray-400">Được tuyển chọn kỹ lưỡng từ các thương hiệu hàng đầu thế giới</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Sản Phẩm & Thiết Bị Nổi Bật</h2>
+                <p class="text-gray-400">Chọn sản phẩm bạn yêu thích và thêm trực tiếp vào giỏ hàng</p>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group">
-                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-gray-950 transition">
-                        <i class="fa-solid fa-desktop"></i>
+                <!-- Sản phẩm 1 -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-cyan-500 transition group">
+                    <div>
+                        <div class="h-48 overflow-hidden bg-gray-800">
+                            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=80" alt="PC Gaming" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">PC Gaming</span>
+                            <h3 class="text-xl font-bold mt-1 mb-2">PC Gaming Dragon RTX 4060</h3>
+                            <p class="text-gray-400 text-sm mb-4">Core i5 13400F / 16GB RAM / 500GB NVMe / RTX 4060 8GB</p>
+                            <div class="text-cyan-400 font-extrabold text-lg">16.990.000đ</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">PC Gaming & Đồ Họa</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Cấu hình mạnh mẽ từ Intel/AMD kết hợp card đồ họa RTX mới nhất. Tối ưu hóa hiệu năng chiến game và thiết kế đồ họa.</p>
+                    <div class="p-6 pt-0">
+                        <button onclick="addToCart('PC Gaming Dragon RTX 4060', 16990000)" class="w-full bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-gray-950 font-bold py-3 rounded-xl border border-cyan-500/30 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Thêm Vào Giỏ Hàng</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group">
-                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-gray-950 transition">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                <!-- Sản phẩm 2 -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-cyan-500 transition group">
+                    <div>
+                        <div class="h-48 overflow-hidden bg-gray-800">
+                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80" alt="Phụ kiện điện thoại" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">Phụ Kiện Điện Thoại</span>
+                            <h3 class="text-xl font-bold mt-1 mb-2">Combo Sạc Nhanh GaN 65W + Cáp Type-C</h3>
+                            <p class="text-gray-400 text-sm mb-4">Hỗ trợ sạc nhanh PD/QC cho mọi dòng smartphone và laptop hiện đại.</p>
+                            <div class="text-cyan-400 font-extrabold text-lg">490.000đ</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Phụ Kiện Điện Thoại</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Củ cáp sạc nhanh chính hãng, tai nghe chống ồn, pin dự phòng dung lượng cao và ốp lưng bảo vệ thời trang.</p>
+                    <div class="p-6 pt-0">
+                        <button onclick="addToCart('Combo Sạc Nhanh GaN 65W', 490000)" class="w-full bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-gray-950 font-bold py-3 rounded-xl border border-cyan-500/30 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Thêm Vào Giỏ Hàng</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group">
-                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-gray-950 transition">
-                        <i class="fa-solid fa-keyboard"></i>
+
+                <!-- Sản phẩm 3 -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-cyan-500 transition group">
+                    <div>
+                        <div class="h-48 overflow-hidden bg-gray-800">
+                            <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Gear Gaming" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">Gear & Linh Kiện</span>
+                            <h3 class="text-xl font-bold mt-1 mb-2">Bàn Phím Cơ Custom RGB Zynix</h3>
+                            <p class="text-gray-400 text-sm mb-4">Switches cơ học êm ái, LED RGB cực đỉnh, kết nối 3 chế độ (Wireless/Bluetooth/Type-C).</p>
+                            <div class="text-cyan-400 font-extrabold text-lg">990.000đ</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Gear & Linh Kiện PC</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Bàn phím cơ custom, chuột gaming độ chính xác cao, tai nghe giả lập 7.1 và RAM/SSD chính hãng tốc độ cao.</p>
+                    <div class="p-6 pt-0">
+                        <button onclick="addToCart('Bàn Phím Cơ Custom RGB Zynix', 990000)" class="w-full bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-gray-950 font-bold py-3 rounded-xl border border-cyan-500/30 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Thêm Vào Giỏ Hàng</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -157,7 +207,7 @@
                         <div class="text-yellow-400 flex space-x-1 mb-4 text-sm">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Bộ PC Gaming mua ở đây chạy cực mượt, cày game nặng không giật lag tí nào. Nhân viên tư vấn cấu hình rất có tâm và hỗ trợ lắp ráp gọn gàng."</p>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Bộ PC Gaming mua ở đây chạy cực mượt, cày game nặng không giật lag tí nào. Nhân viên tư vấn cấu hình rất có tâm."</p>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-sm">TH</div>
@@ -172,7 +222,7 @@
                         <div class="text-yellow-400 flex space-x-1 mb-4 text-sm">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Mình mua phụ kiện sạc nhanh và ốp điện thoại chính hãng dùng rất bền. Giao hàng siêu tốc trong vòng 2 tiếng, sẽ ủng hộ shop dài dài."</p>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Mình mua phụ kiện sạc nhanh dùng rất bền. Giao hàng siêu tốc trong vòng 2 tiếng, sẽ ủng hộ shop dài dài."</p>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-sm">ML</div>
@@ -187,7 +237,7 @@
                         <div class="text-yellow-400 flex space-x-1 mb-4 text-sm">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Chế độ bảo hành vàng cực kỳ yên tâm. Khi máy có lỗi nhỏ mang ra cửa hàng được kỹ thuật viên xử lý nhanh chóng mà không thu phí."</p>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Chế độ bảo hành vàng cực kỳ yên tâm. Khi máy có lỗi nhỏ mang ra cửa hàng được kỹ thuật viên xử lý nhanh chóng."</p>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-sm">ĐK</div>
@@ -201,72 +251,31 @@
         </div>
     </section>
 
-    <!-- PROMOTION / COMBO DEAL -->
-    <section class="py-20 bg-gray-950">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-gray-900 to-gray-900 border border-cyan-500/30 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
-                <div class="absolute -right-20 -top-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-cyan-500/20">Combo Độc Quyền</span>
-                        <h3 class="text-3xl font-extrabold mt-4 mb-3">Combo Gear Gaming & Sạc Nhanh Siêu Hời</h3>
-                        <p class="text-gray-400 text-sm mb-6">Tiết kiệm ngay khi mua trọn bộ bàn phím, chuột cơ và phụ kiện sạc điện thoại cao cấp.</p>
-                        <div class="flex items-baseline space-x-3 mb-6">
-                            <span class="text-gray-500 line-through text-lg">2.490.000đ</span>
-                            <span class="text-3xl font-extrabold text-cyan-400">1.490.000đ</span>
-                        </div>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Trọn bộ Gear Gaming chính hãng</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Tặng kèm cáp sạc nhanh điện thoại trị giá 300k</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Bảo hành 1 đổi 1 trong 12 tháng</li>
-                        </ul>
-                        <a href="#order" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-cyan-500/20 transition">
-                            Nhận Ưu Đãi Ngay
-                        </a>
-                    </div>
-                    <div class="bg-gray-950/60 p-6 rounded-2xl border border-gray-800 text-center">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80" alt="Combo sản phẩm" class="rounded-xl mb-4 w-full h-48 object-cover">
-                        <p class="text-xs text-gray-400">Số lượng ưu đãi có hạn mỗi ngày dành cho 50 khách hàng đầu tiên đăng ký.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ORDER FORM / LIÊN HỆ ĐẶT HÀNG -->
-    <section id="order" class="py-20 bg-gray-900/50">
+    <section id="order" class="py-20 bg-gray-950">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Đăng Ký Tư Vấn & Đặt Hàng Nhanh</h2>
                 <p class="text-gray-400">Điền thông tin chi tiết, đội ngũ Zynix sẽ liên hệ xác nhận đơn hàng trong vòng 5 phút.</p>
             </div>
             <div class="bg-gray-900 border border-gray-800 p-8 sm:p-10 rounded-3xl shadow-xl">
-                <form action="#" method="POST" class="space-y-6">
+                <form onsubmit="handleCheckout(event)" class="space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-2">Họ và tên</label>
-                            <input type="text" required placeholder="Nhập họ tên của bạn" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
+                            <input type="text" id="cust-name" required placeholder="Nhập họ tên của bạn" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-2">Số điện thoại</label>
-                            <input type="tel" required placeholder="Nhập số điện thoại" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
+                            <input type="tel" id="cust-phone" required placeholder="Nhập số điện thoại" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Sản phẩm quan tâm / Yêu cầu cấu hình</label>
-                        <select class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
-                            <option>PC Gaming / Đồ Họa</option>
-                            <option>Phụ kiện điện thoại (Sạc, cáp, tai nghe...)</option>
-                            <option>Gear & Linh kiện máy tính</option>
-                            <option>Tư vấn cấu hình theo ngân sách riêng</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Địa chỉ nhận hàng (Tùy chọn)</label>
-                        <textarea rows="3" placeholder="Nhập số nhà, đường, quận/huyện..." class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition"></textarea>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Yêu cầu / Ghi chú đơn hàng</label>
+                        <textarea id="cust-note" rows="3" placeholder="Nhập địa chỉ hoặc cấu hình tùy chỉnh..." class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-gray-950 font-bold py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition text-lg">
-                        Xác Nhận Đặt Hàng Ngay
+                        Gửi Đơn Hàng Ngay
                     </button>
                 </form>
             </div>
@@ -289,5 +298,125 @@
         </div>
     </footer>
 
+    <!-- ================= GIỎ HÀNG MODAL ================= -->
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-gray-900 w-full max-w-md h-full border-l border-gray-800 p-6 flex flex-col justify-between shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                    <h3 class="text-xl font-bold flex items-center space-x-2">
+                        <i class="fa-solid fa-cart-shopping text-cyan-400"></i>
+                        <span>Giỏ Hàng Của Bạn</span>
+                    </h3>
+                    <button onclick="toggleCart()" class="text-gray-400 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div id="cart-items" class="py-4 space-y-4 overflow-y-auto max-h-[60vh]">
+                    <!-- Danh sách sản phẩm trong giỏ hàng sẽ hiện ở đây -->
+                    <p class="text-gray-500 text-center py-8">Giỏ hàng của bạn đang trống.</p>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-800 space-y-4">
+                <div class="flex justify-between items-center text-lg font-bold">
+                    <span>Tổng tiền:</span>
+                    <span id="cart-total" class="text-cyan-400">0đ</span>
+                </div>
+                <a href="#order" onclick="toggleCart()" class="block text-center bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-bold py-3.5 rounded-xl transition">
+                    Tiến Hành Điền Thông Tin Đặt Hàng
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NÚT CHAT NỔI (ZALO & MESSENGER) ================= -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
+        <!-- Nút Messenger -->
+        <a href="https://m.me/YOUR_PAGE_ID" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 hover:bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Chat qua Messenger">
+            <i class="fa-brands fa-facebook-messenger text-2xl"></i>
+        </a>
+        <!-- Nút Zalo -->
+        <a href="https://zalo.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-500 hover:bg-blue-400 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110 font-bold text-xs" title="Chat qua Zalo">
+            Zalo
+        </a>
+    </div>
+
+    <!-- ================= JAVASCRIPT XỬ LÝ GIỎ HÀNG ================= -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+            alert('Đã thêm "' + name + '" vào giỏ hàng!');
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            // Cập nhật số lượng trên icon giỏ hàng
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.innerText = totalCount;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">Giỏ hàng của bạn đang trống.</p>';
+                cartTotal.innerText = '0đ';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                let itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                html += `
+                    <div class="flex justify-between items-center bg-gray-950 p-3 rounded-xl border border-gray-800">
+                        <div>
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-gray-400">${item.price.toLocaleString()}đ x ${item.quantity}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-300 p-2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = html;
+            cartTotal.innerText = total.toLocaleString() + 'đ';
+        }
+
+        function handleCheckout(event) {
+            event.preventDefault();
+            if (cart.length === 0) {
+                alert('Giỏ hàng của bạn đang trống. Vui lòng chọn sản phẩm trước khi đặt hàng!');
+                return;
+            }
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const note = document.getElementById('cust-note').value;
+
+            let summary = cart.map(i => `${i.name} (SL: ${i.quantity})`).join(', ');
+            alert(`Cảm ơn bạn ${name} đã đặt hàng!\nSản phẩm: ${summary}\nChúng tôi sẽ liên hệ số điện thoại ${phone} để xác nhận trong ít phút.`);
+            
+            // Reset giỏ hàng
+            cart = [];
+            updateCartUI();
+            event.target.reset();
+        }
+    </script>
 </body>
 </html>
