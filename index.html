@@ -9,16 +9,45 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white">
 
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-purple-900/60 via-pink-900/60 to-rose-900/60 border-b border-purple-500/20 text-xs text-slate-300 py-2 px-4 text-center font-medium">
+        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Siêu hội mua sắm công nghệ – Miễn phí vận chuyển toàn quốc cho đơn từ 200K! <a href="#showcase" class="underline hover:text-white ml-1 font-semibold">Săn Deal Ngay &rarr;</a></span>
+    </div>
+
     <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 shadow-2xl shadow-purple-950/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Integrity Logo" class="w-10 h-10 object-contain rounded-lg">
-                <span class="font-bold tracking-wider text-lg bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">TIDINGSK INTEGRITY</span>
+                <div class="relative">
+                    <div class="absolute -inset-1 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 opacity-50 blur-sm group-hover:opacity-100 transition-opacity"></div>
+                    <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Integrity Logo" class="relative w-10 h-10 object-contain rounded-xl bg-slate-900 p-1">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-black tracking-wider text-base sm:text-lg bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">TIDINGSK INTEGRITY</span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-400 font-medium">Official Store</span>
+                </div>
             </a>
 
             <!-- Desktop Nav -->
@@ -27,55 +56,107 @@
                 <a href="#showcase" class="hover:text-purple-400 transition-colors">Gian Hàng Tổng Hợp</a>
                 <a href="#reviews" class="hover:text-purple-400 transition-colors">Đánh Giá</a>
                 
-                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition-all">
-                    <span class="relative flex h-2 w-2">
+                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition-all shadow-lg shadow-rose-950/30">
+                    <span class="relative flex h-2.5 w-2.5">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
                     </span>
-                    <span class="font-bold text-xs">LIVE</span>
+                    <span class="font-bold text-xs tracking-wider">LIVE 11:15 PM</span>
                 </a>
                 <a href="https://www.wherewindsmeetgame.com" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors">Tải Game</a>
                 <a href="https://buymeacoffee.com/tidingsk" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors">Donate</a>
             </nav>
 
-            <!-- Extra Action -->
-            <div class="hidden sm:block">
-                <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all">
-                    VNPAY
-                </a>
+            <!-- Extra Action & Mobile Menu Button -->
+            <div class="flex items-center gap-3">
+                <div class="hidden sm:block">
+                    <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 transition-all shadow-sm">
+                        VNPAY
+                    </a>
+                </div>
+                <!-- Mobile menu toggle button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-6 space-y-4 backdrop-blur-2xl">
+            <nav class="flex flex-col gap-4 text-base font-medium text-slate-300">
+                <a href="#categories" class="mobile-link hover:text-purple-400 transition-colors py-1 border-b border-slate-900">Danh Mục Ngành Hàng</a>
+                <a href="#showcase" class="mobile-link hover:text-purple-400 transition-colors py-1 border-b border-slate-900">Gian Hàng Tổng Hợp</a>
+                <a href="#reviews" class="mobile-link hover:text-purple-400 transition-colors py-1 border-b border-slate-900">Đánh Giá</a>
+                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-2 text-rose-400 py-1 border-b border-slate-900">
+                    <i class="fa-solid fa-circle-dot animate-pulse"></i> TikTok LIVE (23:15 hàng ngày)
+                </a>
+                <a href="https://www.wherewindsmeetgame.com" rel="noopener noreferrer" target="_blank" class="mobile-link hover:text-purple-400 transition-colors py-1 border-b border-slate-900">Tải Game Where Winds Meet</a>
+                <a href="https://buymeacoffee.com/tidingsk" rel="noopener noreferrer" target="_blank" class="mobile-link hover:text-purple-400 transition-colors py-1 border-b border-slate-900">Donate Ủng Hộ Shop</a>
+                <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" class="mobile-link text-purple-400 font-semibold py-1">VNPAY Solutions &rarr;</a>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-16 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-radial-gradient">
+        <!-- Background decorative glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-pink-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium">
-                        <i class="fa-solid fa-bolt"></i>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-bolt text-purple-400"></i>
                         <span>Siêu Thị Tạp Hóa Công Nghệ & Tiện Ích Đa Dạng</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                        Thế Giới Mua Sắm <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-rose-500 bg-clip-text text-transparent">Tất Cả Trong Một</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15]">
+                        Thế Giới Mua Sắm <br class="hidden sm:inline"><span class="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-500 bg-clip-text text-transparent">Tất Cả Trong Một</span>
                     </h1>
-                    <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
-                        Chào mừng bạn đến với gian hàng tổng hợp của Tidingsk Integrity. Nơi cung cấp đầy đủ từ pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh cho đến phụ kiện thông minh chính hãng với giá tốt nhất thị trường.
+                    <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Chào mừng bạn đến với gian hàng tổng hợp của <strong class="text-slate-200">Tidingsk Integrity</strong>. Nơi cung cấp đầy đủ từ pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh cho đến phụ kiện thông minh chính hãng với giá tốt nhất thị trường.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#showcase" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 transition-all">
+                        <a href="#showcase" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 hover:from-purple-500 hover:to-rose-500 text-white font-bold shadow-xl shadow-purple-600/30 flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5">
                             <i class="fa-solid fa-bag-shopping"></i> Khám Phá Gian Hàng Ngay
                         </a>
-                        <a href="tel:0968122893" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 flex items-center justify-center gap-2 transition-all">
+                        <a href="tel:0968122893" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-bold border border-slate-800 flex items-center justify-center gap-2.5 transition-all">
                             <i class="fa-solid fa-phone text-purple-400"></i> Tư Vấn: 0968 122 893
                         </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-900 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl font-black text-white">100%</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Chính Hãng Uy Tín</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white">24/7</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Hỗ Trợ Tư Vấn Nhanh</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white">11:15 PM</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Livestream Mỗi Đêm</div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="relative">
-                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-xl"></div>
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Hệ sinh thái thiết bị công nghệ và phụ kiện thông minh chính hãng Tidingsk Integrity" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="533">
+                    <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 opacity-25 blur-2xl animate-pulse-slow"></div>
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Hệ sinh thái thiết bị công nghệ và phụ kiện thông minh chính hãng Tidingsk Integrity" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="533">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                            <div class="flex items-center gap-3 bg-slate-950/80 backdrop-blur-md px-4 py-3 rounded-2xl border border-slate-800/80 w-full">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold shrink-0">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div class="text-xs">
+                                    <span class="font-bold text-white block">Cam Kết Chất Lượng Vàng</span>
+                                    <span class="text-slate-400">Đổi trả minh bạch & bảo hành chính hãng đầy đủ.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,203 +164,204 @@
     </section>
 
     <!-- Categories Section -->
-    <section id="categories" class="py-16 bg-slate-900/50 border-y border-slate-900">
+    <section id="categories" class="py-20 bg-slate-900/40 border-y border-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
-                <h2 class="text-3xl font-bold tracking-tight">Các Ngành Hàng Chủ Lực Tại Shop</h2>
-                <p class="text-slate-400">Đa dạng lựa chọn, đáp ứng mọi nhu cầu từ làm việc, giải trí đến đời sống.</p>
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Danh Mục Chọn Lọc</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Các Ngành Hàng Chủ Lực Tại Shop</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Đa dạng lựa chọn, đáp ứng mọi nhu cầu từ làm việc, giải trí đến đời sống hiện đại.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Item 1 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 hover:border-purple-500/50 hover:bg-slate-900 transition-all duration-300 group shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
                         <i class="fa-solid fa-desktop"></i>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Màn Hình & PC</h3>
-                    <p class="text-slate-400 text-sm">Màn hình máy tính, PC Gaming, linh kiện...</p>
+                    <h3 class="font-bold text-lg mb-2 text-white group-hover:text-purple-300 transition-colors">Màn Hình & PC</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Màn hình máy tính văn phòng, gaming, PC lắp sẵn và linh kiện cấu hình cao.</p>
                 </div>
                 <!-- Item 2 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 hover:border-pink-500/50 hover:bg-slate-900 transition-all duration-300 group shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-pink-500/20 transition-all">
                         <i class="fa-solid fa-headphones-simple"></i>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Thiết Bị Âm Thanh</h3>
-                    <p class="text-slate-400 text-sm">Sound card, Micro, tai nghe gaming...</p>
+                    <h3 class="font-bold text-lg mb-2 text-white group-hover:text-pink-300 transition-colors">Thiết Bị Âm Thanh</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Sound card chuyên nghiệp, Micro livestream, tai nghe gaming khử tiếng ồn.</p>
                 </div>
                 <!-- Item 3 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 hover:border-blue-500/50 hover:bg-slate-900 transition-all duration-300 group shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all">
                         <i class="fa-solid fa-bolt-lightning"></i>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Phụ Kiện Số</h3>
-                    <p class="text-slate-400 text-sm">Sạc dự phòng, cáp sạc, phụ kiện điện thoại...</p>
+                    <h3 class="font-bold text-lg mb-2 text-white group-hover:text-blue-300 transition-colors">Phụ Kiện Số</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Sạc dự phòng dung lượng lớn, cáp sạc nhanh, củ sạc đa cổng thông minh.</p>
                 </div>
                 <!-- Item 4 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 hover:border-emerald-500/50 hover:bg-slate-900 transition-all duration-300 group shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
                         <i class="fa-solid fa-boxes-stacked"></i>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Hàng Tiện Ích Khác</h3>
-                    <p class="text-slate-400 text-sm">Sản phẩm gia dụng thông minh, bắt trend...</p>
+                    <h3 class="font-bold text-lg mb-2 text-white group-hover:text-emerald-300 transition-colors">Hàng Tiện Ích Khác</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Sản phẩm gia dụng thông minh, thiết bị bắt trend và đồ chơi công nghệ độc đáo.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Showcase Section -->
-    <section id="showcase" class="py-20">
+    <section id="showcase" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-medium">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-semibold tracking-wide uppercase">
                     <i class="fa-solid fa-store"></i>
                     <span>TikTok Shop Showcase Trực Quan</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Gian Hàng Tổng Hợp Tidingsk Integrity</h2>
-                <p class="text-slate-400">Khám phá các sản phẩm hot nhất hiện tại trên gian hàng của chúng tôi. Bấm nút Mua Ngay để xem chi tiết và chốt đơn trực tiếp trên TikTok Shop.</p>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight">Gian Hàng Tổng Hợp Tidingsk Integrity</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Khám phá các sản phẩm hot nhất hiện tại trên gian hàng của chúng tôi. Bấm nút Mua Ngay để xem chi tiết và chốt đơn trực tiếp trên TikTok Shop.</p>
             </div>
 
             <!-- Products Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Product 1 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-58%</span>
-                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-black text-xs shadow-md">-58%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">GUTEK</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
-                        <div class="text-rose-400 font-bold text-lg">250.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">GUTEK</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
+                        <div class="text-rose-400 font-black text-xl">250.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-20%</span>
-                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-black text-xs shadow-md">-20%</span>
+                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Maono Vietnam</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
-                        <div class="text-rose-400 font-bold text-lg">1.169.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">Maono Vietnam</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
+                        <div class="text-rose-400 font-black text-xl">1.169.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-28%</span>
-                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-black text-xs shadow-md">-28%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Ziczac Computer</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
-                        <div class="text-rose-400 font-bold text-lg">1.440.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">Ziczac Computer</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
+                        <div class="text-rose-400 font-black text-xl">1.440.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-57%</span>
-                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-rose-600 text-white font-black text-xs shadow-md">-57%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">StaFor</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
-                        <div class="text-rose-400 font-bold text-lg">62.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">StaFor</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
+                        <div class="text-rose-400 font-black text-xl">62.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 5 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-black text-xs shadow-md">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu, Phím ABS Gõ Êm</h3>
-                        <div class="text-rose-400 font-bold text-lg">233.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">Tidingsk Select</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu, Phím ABS Gõ Êm</h3>
+                        <div class="text-rose-400 font-black text-xl">233.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 6 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-black text-xs shadow-md">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Màn hình di động thông minh Azopa</h3>
-                        <div class="text-rose-400 font-bold text-lg">2.250.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">Tidingsk Select</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Màn hình di động thông minh Azopa</h3>
+                        <div class="text-rose-400 font-black text-xl">2.250.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 7 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-black text-xs shadow-md">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Webcam kép EMEET C60E 4K Dual với điều khiển, đèn RGB</h3>
-                        <div class="text-rose-400 font-bold text-lg">536.607đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">Tidingsk Select</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Webcam kép EMEET C60E 4K Dual với điều khiển, đèn RGB</h3>
+                        <div class="text-rose-400 font-black text-xl">536.607đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 8 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
-                    <div class="p-4">
-                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <div class="bg-slate-900/90 border border-slate-800/90 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 transition-all group">
+                    <div class="p-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-square mb-4 border border-slate-800/50">
+                            <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg bg-amber-500 text-white font-black text-xs shadow-md">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Tai nghe chụp Gaming XSTAR G93 có mic đàm thoại, LED RGB</h3>
-                        <div class="text-rose-400 font-bold text-lg">315.000đ</div>
+                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2.5 py-0.5 rounded-md">Tidingsk Select</span>
+                        <h3 class="font-bold text-sm line-clamp-2 mt-2 mb-3 text-slate-100 group-hover:text-purple-300 transition-colors">Tai nghe chụp Gaming XSTAR G93 có mic đàm thoại, LED RGB</h3>
+                        <div class="text-rose-400 font-black text-xl">315.000đ</div>
                     </div>
-                    <div class="p-4 pt-0">
-                        <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <div class="p-5 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" class="w-full py-3 rounded-2xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm">
                             <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
                         </a>
                     </div>
@@ -288,69 +370,92 @@
             </div>
 
             <!-- View All Button -->
-            <div class="text-center mt-12">
-                <a href="https://vt.tiktok.com/ZS9hWMRd4UB46-w0Jrf" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 transition-all">
-                    <i class="fa-brands fa-tiktok text-rose-500"></i> Xem Trên Điện Thoại Toàn Bộ Gian Hàng TikTok Shop
+            <div class="text-center mt-14">
+                <a href="https://vt.tiktok.com/ZS9hWMRd4UB46-w0Jrf" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-100 font-bold border border-slate-800 shadow-xl transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-tiktok text-rose-500 text-xl"></i> Xem Trên Điện Thoại Toàn Bộ Gian Hàng TikTok Shop
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews" class="py-20 bg-slate-900/50 border-t border-slate-900">
+    <section id="reviews" class="py-24 bg-slate-900/40 border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <h2 class="text-3xl font-bold tracking-tight">Khách Hàng Nói Gì Về Chúng Tôi?</h2>
-                <p class="text-slate-400">Sự hài lòng của khách hàng là động lực phát triển của Tidingsk Integrity.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Phản Hồi Từ Khách Hàng</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Khách Hàng Nói Gì Về Chúng Tôi?</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Sự hài lòng và tin tưởng của khách hàng là động lực phát triển lớn nhất của Tidingsk Integrity.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Review 1 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 flex flex-col justify-between space-y-6 shadow-lg relative group hover:border-purple-500/40 transition-all">
+                    <div class="absolute top-6 right-6 text-purple-500/10 text-4xl font-serif">“</div>
+                    <div class="space-y-4">
                         <div class="text-amber-400 text-sm flex gap-1">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm italic">"Shop chuyên cung cấp sạc dự phòng, màn hình và thiết bị âm thanh cực kỳ uy tín. Giao hàng nhanh và tư vấn rất có tâm!"</p>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">"Shop chuyên cung cấp sạc dự phòng, màn hình và thiết bị âm thanh cực kỳ uy tín. Giao hàng nhanh và tư vấn rất có tâm!"</p>
                     </div>
-                    <span class="text-xs font-semibold text-purple-400">- Chị Mỹ Linh (Đà Nẵng)</span>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center font-bold text-white text-xs">ML</div>
+                        <div>
+                            <span class="text-xs font-bold text-white block">Chị Mỹ Linh</span>
+                            <span class="text-[11px] text-slate-400">Đà Nẵng</span>
+                        </div>
+                    </div>
                 </div>
                 <!-- Review 2 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 flex flex-col justify-between space-y-6 shadow-lg relative group hover:border-purple-500/40 transition-all">
+                    <div class="absolute top-6 right-6 text-purple-500/10 text-4xl font-serif">“</div>
+                    <div class="space-y-4">
                         <div class="text-amber-400 text-sm flex gap-1">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm italic">"Trang tổng hợp sản phẩm trực quan, bấm vào là hiện ra gian hàng TikTok Shop liền. Rất tiện lợi cho việc săn sale đồ công nghệ."</p>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">"Trang tổng hợp sản phẩm trực quan, bấm vào là hiện ra gian hàng TikTok Shop liền. Rất tiện lợi cho việc săn sale đồ công nghệ."</p>
                     </div>
-                    <span class="text-xs font-semibold text-purple-400">- Bạn Đức Duy (Hà Nội)</span>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center font-bold text-white text-xs">ĐD</div>
+                        <div>
+                            <span class="text-xs font-bold text-white block">Bạn Đức Duy</span>
+                            <span class="text-[11px] text-slate-400">Hà Nội</span>
+                        </div>
+                    </div>
                 </div>
                 <!-- Review 3 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
+                <div class="p-8 rounded-3xl bg-slate-900/90 border border-slate-800/80 flex flex-col justify-between space-y-6 shadow-lg relative group hover:border-purple-500/40 transition-all">
+                    <div class="absolute top-6 right-6 text-purple-500/10 text-4xl font-serif">“</div>
+                    <div class="space-y-4">
                         <div class="text-amber-400 text-sm flex gap-1">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm italic">"Mua cái màn hình Edra bên shop dùng mượt mà, giá lại mềm hơn mấy chỗ khác. Chắc chắn sẽ ủng hộ thêm các phụ kiện khác."</p>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">"Mua cái màn hình Edra bên shop dùng mượt mà, giá lại mềm hơn mấy chỗ khác. Chắc chắn sẽ ủng hộ thêm các phụ kiện khác."</p>
                     </div>
-                    <span class="text-xs font-semibold text-purple-400">- Anh Hoàng Nam (TP. Hồ Chí Minh)</span>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center font-bold text-white text-xs">HN</div>
+                        <div>
+                            <span class="text-xs font-bold text-white block">Anh Hoàng Nam</span>
+                            <span class="text-[11px] text-slate-400">TP. Hồ Chí Minh</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Support / Donate Section -->
-    <section class="py-16 bg-gradient-to-b from-slate-900/50 to-slate-950 border-t border-slate-900">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium">
+    <section class="py-20 bg-gradient-to-b from-slate-900/40 to-slate-950 border-t border-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-radial-gradient opacity-40 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-6 relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold tracking-wide uppercase">
                 <i class="fa-solid fa-mug-hot"></i>
                 <span>Ủng Hộ Nhà Sáng Tạo & Cộng Đồng</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Thích Các Buổi Phát Sóng Trực Tiếp Của Tidingsk Integrity</h2>
-            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-                Mỗi đóng góp của bạn là nguồn động lực lớn giúp Tidingsk duy trì các buổi Live stream đêm muộn (Every contribution you make is a great source of motivation that helps Tidingsk keep the late-night livestreams going)
+            <h2 class="text-2xl sm:text-4xl font-black tracking-tight">Thích Các Buổi Phát Sóng Trực Tiếp Của Tidingsk Integrity?</h2>
+            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+                Mỗi đóng góp của bạn là nguồn động lực lớn giúp Tidingsk duy trì các buổi Live stream đêm muộn <br class="hidden sm:inline"><span class="italic text-xs text-slate-500">(Every contribution you make is a great source of motivation that helps Tidingsk keep the late-night livestreams going)</span>
             </p>
-            <div class="pt-2">
-                <a href="https://buymeacoffee.com/tidingsk" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold shadow-lg shadow-amber-500/20 transform hover:-translate-y-0.5 transition-all">
+            <div class="pt-4">
+                <a href="https://buymeacoffee.com/tidingsk" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-3 px-9 py-4.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-black shadow-xl shadow-amber-500/20 transform hover:-translate-y-0.5 transition-all text-base">
                     <i class="fa-solid fa-mug-hot text-xl"></i>
                     <span>Buy Me a Coffee (Donate Cho Shop)</span>
                 </a>
@@ -359,17 +464,39 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <div class="flex items-center gap-3">
-                <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Logo" class="w-8 h-8 object-contain">
-                <span class="text-xs text-slate-400">© 2026 Tidingsk Integrity. Live broadcast every day at 11:15 PM (UTC+7).</span>
+    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Logo" class="w-10 h-10 object-contain rounded-xl bg-slate-900 p-1 border border-slate-800">
+                <div class="text-xs text-slate-400 space-y-1">
+                    <div class="font-bold text-slate-200">© 2026 Tidingsk Integrity. All rights reserved.</div>
+                    <div>Live broadcast every day at 11:15 PM (UTC+7). Hotline/Zalo: 0968.122.893</div>
+                </div>
             </div>
-            <div class="flex items-center gap-6 text-sm text-slate-400">
-                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-tiktok"></i> Live</a>
-                <a href="https://www.youtube.com/@tidingsk" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-youtube"></i> Youtube</a>
-                <a href="https://zalo.me/0968122893" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-solid fa-comment-sms"></i> Zalo</a>
-                <a href="https://www.facebook.com/tiding.sk.2024" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <div class="flex items-center gap-6 text-base text-slate-400">
+                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors" title="TikTok Live"><i class="fa-brands fa-tiktok text-lg"></i></a>
+                <a href="https://www.youtube.com/@tidingsk" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors" title="YouTube"><i class="fa-brands fa-youtube text-lg"></i></a>
+                <a href="https://zalo.me/0968122893" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors" title="Zalo"><i class="fa-solid fa-comment-sms text-lg"></i></a>
+                <a href="https://www.facebook.com/tiding.sk.2024" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors" title="Facebook"><i class="fa-brands fa-facebook text-lg"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
