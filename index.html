@@ -482,6 +482,29 @@
         </div>
     </footer>
 
+    <!-- Floating Donate Button (Nút Donate cuộn theo trang) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end group">
+        <!-- Text tooltip khi rê chuột vào (hoặc hiển thị nhẹ trên mobile) -->
+        <div class="mb-2 hidden sm:group-hover:flex items-center gap-2 px-3 py-1.5 bg-slate-900 border border-amber-500/30 text-amber-300 text-xs font-semibold rounded-xl shadow-xl transition-all">
+            <span>Ủng hộ 1 ly cà phê ☕</span>
+        </div>
+        
+        <!-- Nút chính -->
+        <a href="https://buymeacoffee.com/tidingsk" rel="noopener noreferrer" target="_blank" 
+           class="relative flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 rounded-full shadow-lg shadow-amber-500/30 hover:scale-110 transition-all duration-300 group"
+           aria-label="Donate cho shop">
+            
+            <!-- Hiệu ứng vòng sóng lan tỏa phía sau (Pulse effect) -->
+            <span class="absolute inset-0 rounded-full bg-amber-400 animate-ping opacity-25 pointer-events-none"></span>
+            
+            <!-- Biểu tượng cốc cà phê / Donate -->
+            <i class="fa-solid fa-mug-hot text-2xl transform group-hover:rotate-12 transition-transform"></i>
+        </a>
+    </div>
+
+</body>
+</html>
+
     <!-- Mobile Menu Script -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
