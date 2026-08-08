@@ -14,39 +14,40 @@
 
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
+            <a href="#" class="flex items-center gap-3 group shrink-0">
                 <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Integrity Logo" class="w-10 h-10 object-contain rounded-lg">
                 <span class="font-bold tracking-wider text-lg bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">TIDINGSK INTEGRITY</span>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-300">
-                <a href="#categories" class="hover:text-purple-400 transition-colors">Danh Mục Ngành Hàng</a>
-                <a href="#showcase" class="hover:text-purple-400 transition-colors">Gian Hàng Tổng Hợp</a>
-                <a href="#reviews" class="hover:text-purple-400 transition-colors">Đánh Giá</a>
-                
-                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition-all">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-                    </span>
-                    <span class="font-bold text-xs">LIVE</span>
-                </a>
+            <!-- Right Area / Navigation Items -->
+            <div class="hidden lg:flex items-center gap-4 xl:gap-6">
+                <!-- Navigation Links -->
+                <nav class="flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-300">
+                    <a href="#categories" class="hover:text-purple-400 transition-colors">Danh Mục Ngành Hàng</a>
+                    <a href="#showcase" class="hover:text-purple-400 transition-colors">Gian Hàng Tổng Hợp</a>
+                    <a href="#reviews" class="hover:text-purple-400 transition-colors">Đánh Giá</a>
+                    
+                    <!-- Nút LIVE -->
+                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition-all shrink-0">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                        </span>
+                        <span class="font-bold text-xs">LIVE</span>
+                    </a>
+                </nav>
 
-                <!-- BẮT ĐẦU: Đồng hồ đếm ngược Livestream 23:15 (Khung màu đỏ) -->
-                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-950/50 border border-purple-500/30 text-purple-300 font-mono text-xs shadow-inner">
+                <!-- KHUNG MÀU ĐỎ: Đồng hồ đếm ngược nằm CHÍNH GIỮA nút LIVE và VNPAY -->
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-950/50 border border-purple-500/30 text-purple-300 font-mono text-xs shadow-inner shrink-0">
                     <i class="fa-regular fa-clock text-pink-400 animate-pulse"></i>
                     <span class="hidden xl:inline text-slate-400 font-sans text-xs">Live 23:15:</span>
                     <span id="live-countdown" class="font-bold text-purple-200 tracking-wider">00:00:00</span>
                 </div>
-                <!-- KẾT THÚC: Đồng hồ đếm ngược -->
-            </nav>
 
-            <!-- Extra Action -->
-            <div class="hidden sm:block">
-                <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all">
+                <!-- Nút VNPAY -->
+                <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all shrink-0">
                     VNPAY
                 </a>
             </div>
@@ -433,10 +434,10 @@
       function updateLiveCountdown() {
         const now = new Date();
         
-        // Thiết lập mốc 23:15:00 trong ngày hiện tại
+        // Mốc 23:15:00 trong ngày hiện tại
         let target = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 15, 0);
 
-        // Nếu đã qua 23:15 hôm nay, tự động chuyển mốc sang 23:15 ngày hôm sau
+        // Chuyển sang 23:15 ngày hôm sau nếu đã qua mốc giờ
         if (now.getTime() >= target.getTime()) {
           target.setDate(target.getDate() + 1);
         }
@@ -447,7 +448,6 @@
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        // Định dạng thêm số 0 đằng trước nếu nhỏ hơn 10 (vd: 05:08:09)
         const hStr = String(hours).padStart(2, '0');
         const mStr = String(minutes).padStart(2, '0');
         const sStr = String(seconds).padStart(2, '0');
@@ -458,7 +458,6 @@
         }
       }
 
-      // Chạy hàm cập nhật ngay lập tức và cài đặt lặp lại mỗi 1 giây (1000ms)
       updateLiveCountdown();
       setInterval(updateLiveCountdown, 1000);
     </script>
