@@ -3,680 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sản Phẩm Đỉnh Cao - Giải Pháp Hoàn Hảo Cho Bạn</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Zynix Digital Hub - PC, Linh Kiện & Phụ Kiện Điện Thoại Chính Hãng</title>
+    <meta name="description" content="Chuyên cung cấp PC Gaming, PC Văn Phòng, linh kiện máy tính và phụ kiện điện thoại chính hãng, giá tốt, bảo hành uy tín.">
+    <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --accent: #f59e0b;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --danger: #ef4444;
-            --success: #10b981;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
-
-        /* Header / Top Bar */
-        header {
-            background: var(--white);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .header-cta {
-            background: var(--accent);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-
-        .header-cta:hover {
-            background: #d97706;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: var(--white);
-            padding: 80px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding: 50px 5%;
-            }
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #e2e8f0;
-            margin-bottom: 30px;
-            max-width: 540px;
-        }
-
-        .btn-main {
-            background: var(--accent);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
-            transition: transform 0.2s, background 0.2s;
-        }
-
-        .btn-main:hover {
-            background: #d97706;
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* Section Generic Styles */
-        section {
-            padding: 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Pain Points */
-        .pain-points {
-            background: var(--white);
-        }
-
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .pain-card {
-            background: #fef2f2;
-            border: 1px solid #fee2e2;
-            padding: 30px;
-            border-radius: 12px;
-            transition: transform 0.2s;
-        }
-
-        .pain-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .pain-card i {
-            font-size: 2rem;
-            color: var(--danger);
-            margin-bottom: 15px;
-        }
-
-        .pain-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: #991b1b;
-        }
-
-        .pain-card p {
-            color: #7f1d1d;
-            font-size: 0.95rem;
-        }
-
-        /* Features / Benefits */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 35px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary);
-            transition: box-shadow 0.2s;
-        }
-
-        .feature-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-
-        .feature-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Social Proof / Testimonials */
-        .testimonials {
-            background: var(--white);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .stars {
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .customer-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .customer-avatar {
-            width: 45px;
-            height: 45px;
-            background: #cbd5e1;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--white);
-            background-color: var(--primary);
-        }
-
-        .customer-name h4 {
-            font-size: 1rem;
-            margin-bottom: 2px;
-        }
-
-        .customer-name span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Pricing & Offer */
-        .pricing {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        }
-
-        .pricing-box {
-            background: var(--white);
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 2px solid var(--success);
-            position: relative;
-        }
-
-        .pricing-tag {
-            background: var(--success);
-            color: var(--white);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .price-display {
-            margin-bottom: 30px;
-        }
-
-        .old-price {
-            font-size: 1.25rem;
-            color: #9ca3af;
-            text-decoration: line-through;
-            margin-bottom: 5px;
-        }
-
-        .current-price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--success);
-        }
-
-        .pricing-features {
-            text-align: left;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #f3f4f6;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-
-        .pricing-features li i {
-            color: var(--success);
-        }
-
-        /* Checkout / Lead Form Section */
-        .checkout-section {
-            background: var(--white);
-            display: flex;
-            justify-content: center;
-        }
-
-        .form-container {
-            background: var(--bg-light);
-            width: 100%;
-            max-width: 700px;
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            background: var(--white);
-        }
-
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .btn-submit {
-            background: var(--success);
-            color: var(--white);
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-submit:hover {
-            background: #059669;
-        }
-
-        .security-note {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 40px 5%;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        .guarantee-badges {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .badge-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .badge-item i {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-    </style>
+    <!-- Tailwind CSS CDN cho thiết kế hiện đại, responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased">
 
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-bolt"></i> BrandName
-        </div>
-        <a href="#order" class="header-cta">Đặt Hàng Ngay</a>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-badge"><i class="fa-solid fa-fire"></i> Ưu đãi đặc biệt hôm nay</span>
-            <h1>Giải Pháp Tối Ưu Giúp Bạn Bứt Phá Doanh Thu & Hiệu Suất</h1>
-            <p>Trải nghiệm sản phẩm chất lượng cao với công nghệ tiên tiến nhất. Giúp bạn tiết kiệm thời gian, chi phí và đạt kết quả vượt mong đợi.</p>
-            <a href="#order" class="btn-main">
-                <i class="fa-solid fa-cart-shopping"></i> Nhận Ưu Đãi 50% Ngay
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2 text-xl font-bold tracking-wider text-cyan-400">
+                <i class="fa-solid fa-microchip text-2xl"></i>
+                <span>ZYNIX DIGITAL HUB</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#products" class="hover:text-cyan-400 transition">Sản Phẩm</a>
+                <a href="#features" class="hover:text-cyan-400 transition">Ưu Điểm</a>
+                <a href="#reviews" class="hover:text-cyan-400 transition">Đánh Giá</a>
+                <a href="#order" class="hover:text-cyan-400 transition">Liên Hệ</a>
+            </nav>
+            <a href="#order" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-full font-medium shadow-lg shadow-cyan-500/20 transition">
+                Đặt Hàng Ngay
             </a>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Sản phẩm minh họa">
-        </div>
-    </section>
+    </header>
 
-    <!-- Pain Points Section -->
-    <section class="pain-points">
-        <div class="section-title">
-            <h2>Bạn Có Đang Gặp Phải Những Vấn Đề Này?</h2>
-            <p>Những khó khăn hàng ngày đang cản trở bạn vươn tới thành công</p>
-        </div>
-        <div class="pain-grid">
-            <div class="pain-card">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                <h3>Tốn Kém Thời Gian</h3>
-                <p>Quy trình thủ công rườm rà khiến bạn mất hàng giờ liền mà hiệu quả công việc vẫn không cao.</p>
-            </div>
-            <div class="pain-card">
-                <i class="fa-solid fa-circle-xmark"></i>
-                <h3>Chi Phí Phát Sinh Cao</h3>
-                <p>Đầu tư nhiều giải pháp khác nhau nhưng không mang lại hiệu quả thực tế, gây lãng phí ngân sách.</p>
-            </div>
-            <div class="pain-card">
-                <i class="fa-solid fa-face-frown"></i>
-                <h3>Thiếu Hụt Hỗ Trợ</h3>
-                <p>Mua sản phẩm xong nhưng không nhận được hướng dẫn chi tiết hoặc hỗ trợ kỹ thuật khi gặp sự cố.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features & Benefits -->
-    <section>
-        <div class="section-title">
-            <h2>Sản Phẩm Của Chúng Tôi Mang Lại Gì Cho Bạn?</h2>
-            <p>Giải pháp toàn diện được thiết kế chuyên biệt để giải quyết triệt để vấn đề của bạn</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-gauge-high"></i>
-                <h3>Hiệu Suất Vượt Trội</h3>
-                <p>Tối ưu hóa toàn diện giúp tăng tốc độ xử lý công việc lên gấp nhiều lần so với thông thường.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>An Toàn & Bảo Mật</h3>
-                <p>Hệ thống mã hóa chuẩn quốc tế bảo vệ tuyệt đối thông tin và dữ liệu quan trọng của bạn.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-headset"></i>
-                <h3>Đồng Hành 24/7</h3>
-                <p>Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ giải đáp mọi thắc mắc và đồng hành cùng bạn mọi lúc.</p>
-            </div>
-        </div>
-
-        <div class="guarantee-badges">
-            <div class="badge-item"><i class="fa-solid fa-circle-check"></i> Cam kết chính hãng 100%</div>
-            <div class="badge-item"><i class="fa-solid fa-rotate-left"></i> Đổi trả trong 30 ngày</div>
-            <div class="badge-item"><i class="fa-solid fa-truck-fast"></i> Giao hàng toàn quốc nhanh chóng</div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="section-title">
-            <h2>Khách Hàng Nói Gì Về Chúng Tôi?</h2>
-            <p>Hơn 10,000+ khách hàng đã tin tưởng và sử dụng thành công</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-gray-900 to-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Công Nghệ Đỉnh Cao - Hiệu Năng Vượt Trội</span>
                 </div>
-                <p>"Sản phẩm tuyệt vời vượt ngoài mong đợi! Công việc của tôi đã nhẹ nhàng hơn rất nhiều từ khi bắt đầu sử dụng."</p>
-                <div class="customer-info">
-                    <div class="customer-avatar">HN</div>
-                    <div class="customer-name">
-                        <h4>Hoàng Nam</h4>
-                        <span>Chủ doanh nghiệp nhỏ</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Nâng Tầm Trải Nghiệm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">PC & Điện Thoại</span>
+                </h1>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Cung cấp hệ thống PC Gaming, PC đồ họa, linh kiện chính hãng cùng hệ sinh thái phụ kiện điện thoại cao cấp. Tối ưu hóa mọi trải nghiệm chiến game và làm việc của bạn.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#order" class="inline-flex justify-center items-center bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition">
+                        <i class="fa-solid fa-cart-shopping mr-2"></i> Khám Phá Sản Phẩm
+                    </a>
+                    <a href="#features" class="inline-flex justify-center items-center bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-8 py-4 rounded-xl transition border border-gray-700">
+                        Tìm Hiểu Thêm
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-lg opacity-30"></div>
+                <div class="relative bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
+                    <img alt="PC Gaming và Phụ kiện công nghệ" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80" class="w-full h-auto object-cover transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS / VẤN ĐỀ KHÁCH HÀNG -->
+    <section class="py-20 bg-gray-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Bạn Đang Gặp Khó Khăn Gì Khi Mua Sắm Thiết Bị Công Nghệ?</h2>
+                <p class="text-gray-400">Chọn nhầm sản phẩm kém chất lượng hay thiếu sự hỗ trợ kỹ thuật có thể làm gián đoạn công việc và giải trí.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500/50 transition">
+                    <div class="w-14 h-14 bg-red-500/10 text-red-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Linh Kiện Kém Chất Lượng</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mua phải hàng trôi nổi, không rõ nguồn gốc, dễ phát sinh lỗi vặt, giật lag khi chơi game hoặc render nặng.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500/50 transition">
+                    <div class="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-face-frown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Giá Cả Không Tương xứng</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Bị độn giá cao nhưng cấu hình thực tế không đáp ứng đủ nhu cầu công việc hoặc giải trí hiện tại.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500/50 transition">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Thiếu Hỗ Trợ Sau Bán Hàng</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Khi máy tính hoặc phụ kiện gặp sự cố phần cứng/phần mềm nhưng không được bảo hành hoặc hỗ trợ kỹ thuật kịp thời.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS / SẢN PHẨM & GIẢI PHÁP -->
+    <section id="products" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Hệ Sinh Thái Sản Phẩm Tại Zynix</h2>
+                <p class="text-gray-400">Được tuyển chọn kỹ lưỡng từ các thương hiệu hàng đầu thế giới</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group">
+                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-gray-950 transition">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">PC Gaming & Đồ Họa</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Cấu hình mạnh mẽ từ Intel/AMD kết hợp card đồ họa RTX mới nhất. Tối ưu hóa hiệu năng chiến game và thiết kế đồ họa.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group">
+                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-gray-950 transition">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Phụ Kiện Điện Thoại</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Củ cáp sạc nhanh chính hãng, tai nghe chống ồn, pin dự phòng dung lượng cao và ốp lưng bảo vệ thời trang.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group">
+                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-gray-950 transition">
+                        <i class="fa-solid fa-keyboard"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gear & Linh Kiện PC</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Bàn phím cơ custom, chuột gaming độ chính xác cao, tai nghe giả lập 7.1 và RAM/SSD chính hãng tốc độ cao.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 bg-gray-900/40 p-8 rounded-2xl border border-gray-800/80 text-center">
+                <div class="flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-shield-check text-cyan-400 text-2xl"></i>
+                    <span class="font-semibold text-gray-200">Cam kết chính hãng 100%</span>
+                </div>
+                <div class="flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-rotate-left text-cyan-400 text-2xl"></i>
+                    <span class="font-semibold text-gray-200">Đổi trả linh hoạt trong 30 ngày</span>
+                </div>
+                <div class="flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-truck-fast text-cyan-400 text-2xl"></i>
+                    <span class="font-semibold text-gray-200">Giao hàng & lắp đặt tận nơi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS / ĐÁNH GIÁ KHÁCH HÀNG -->
+    <section id="reviews" class="py-20 bg-gray-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Khách Hàng Nói Gì Về Zynix?</h2>
+                <p class="text-gray-400">Hơn 5,000+ game thủ và nhà sáng tạo nội dung đã tin tưởng lựa chọn</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 flex space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Bộ PC Gaming mua ở đây chạy cực mượt, cày game nặng không giật lag tí nào. Nhân viên tư vấn cấu hình rất có tâm và hỗ trợ lắp ráp gọn gàng."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-sm">TH</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Tuấn Hưng</h4>
+                            <span class="text-gray-400 text-xs">Game thủ & Streamer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 flex space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Mình mua phụ kiện sạc nhanh và ốp điện thoại chính hãng dùng rất bền. Giao hàng siêu tốc trong vòng 2 tiếng, sẽ ủng hộ shop dài dài."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-sm">ML</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Mai Linh</h4>
+                            <span class="text-gray-400 text-xs">Nhân viên văn phòng</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 flex space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Chế độ bảo hành vàng cực kỳ yên tâm. Khi máy có lỗi nhỏ mang ra cửa hàng được kỹ thuật viên xử lý nhanh chóng mà không thu phí."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-sm">ĐK</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Đình Khương</h4>
+                            <span class="text-gray-400 text-xs">Designer & Video Editor</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"Dịch vụ chăm sóc khách hàng cực kỳ tận tâm. Giá cả lại rất hợp lý so với những gì nhận được. Rất đáng tiền!"</p>
-                <div class="customer-info">
-                    <div class="customer-avatar">MA</div>
-                    <div class="customer-name">
-                        <h4>Minh Anh</h4>
-                        <span>Freelancer Marketing</span>
+        </div>
+    </section>
+
+    <!-- PROMOTION / COMBO DEAL -->
+    <section class="py-20 bg-gray-950">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-gray-900 to-gray-900 border border-cyan-500/30 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-cyan-500/20">Combo Độc Quyền</span>
+                        <h3 class="text-3xl font-extrabold mt-4 mb-3">Combo Gear Gaming & Sạc Nhanh Siêu Hời</h3>
+                        <p class="text-gray-400 text-sm mb-6">Tiết kiệm ngay khi mua trọn bộ bàn phím, chuột cơ và phụ kiện sạc điện thoại cao cấp.</p>
+                        <div class="flex items-baseline space-x-3 mb-6">
+                            <span class="text-gray-500 line-through text-lg">2.490.000đ</span>
+                            <span class="text-3xl font-extrabold text-cyan-400">1.490.000đ</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Trọn bộ Gear Gaming chính hãng</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Tặng kèm cáp sạc nhanh điện thoại trị giá 300k</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Bảo hành 1 đổi 1 trong 12 tháng</li>
+                        </ul>
+                        <a href="#order" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-cyan-500/20 transition">
+                            Nhận Ưu Đãi Ngay
+                        </a>
+                    </div>
+                    <div class="bg-gray-950/60 p-6 rounded-2xl border border-gray-800 text-center">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80" alt="Combo sản phẩm" class="rounded-xl mb-4 w-full h-48 object-cover">
+                        <p class="text-xs text-gray-400">Số lượng ưu đãi có hạn mỗi ngày dành cho 50 khách hàng đầu tiên đăng ký.</p>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"Từ ngày dùng giải pháp này, hiệu suất làm việc nhóm tăng lên rõ rệt. Chắc chắn tôi sẽ giới thiệu cho bạn bè."</p>
-                <div class="customer-info">
-                    <div class="customer-avatar">QD</div>
-                    <div class="customer-name">
-                        <h4>Quốc Dũng</h4>
-                        <span>Trưởng phòng kinh doanh</span>
+        </div>
+    </section>
+
+    <!-- ORDER FORM / LIÊN HỆ ĐẶT HÀNG -->
+    <section id="order" class="py-20 bg-gray-900/50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Đăng Ký Tư Vấn & Đặt Hàng Nhanh</h2>
+                <p class="text-gray-400">Điền thông tin chi tiết, đội ngũ Zynix sẽ liên hệ xác nhận đơn hàng trong vòng 5 phút.</p>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 p-8 sm:p-10 rounded-3xl shadow-xl">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Họ và tên</label>
+                            <input type="text" required placeholder="Nhập họ tên của bạn" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Số điện thoại</label>
+                            <input type="tel" required placeholder="Nhập số điện thoại" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
+                        </div>
                     </div>
-                </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Sản phẩm quan tâm / Yêu cầu cấu hình</label>
+                        <select class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition">
+                            <option>PC Gaming / Đồ Họa</option>
+                            <option>Phụ kiện điện thoại (Sạc, cáp, tai nghe...)</option>
+                            <option>Gear & Linh kiện máy tính</option>
+                            <option>Tư vấn cấu hình theo ngân sách riêng</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Địa chỉ nhận hàng (Tùy chọn)</label>
+                        <textarea rows="3" placeholder="Nhập số nhà, đường, quận/huyện..." class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-cyan-500 transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-gray-950 font-bold py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition text-lg">
+                        Xác Nhận Đặt Hàng Ngay
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing">
-        <div class="section-title">
-            <h2>Đầu Tư Nhận Giá Trị Lớn</h2>
-            <p>Đăng ký ngay hôm nay để nhận trọn gói ưu đãi độc quyền</p>
-        </div>
-        <div class="pricing-box">
-            <span class="pricing-tag">Siêu Giảm Giá 50%</span>
-            <div class="price-display">
-                <div class="old-price">1.990.000đ</div>
-                <div class="current-price">990.000đ</div>
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-sm">
+            <div class="flex items-center space-x-2 text-cyan-400 font-bold mb-4 sm:mb-0">
+                <i class="fa-solid fa-microchip"></i>
+                <span>ZYNIX DIGITAL HUB</span>
             </div>
-            <ul class="pricing-features">
-                <li><i class="fa-solid fa-check"></i> Trọn bộ sản phẩm chính hãng cao cấp</li>
-                <li><i class="fa-solid fa-check"></i> Tặng kèm khóa học hướng dẫn chi tiết trị giá 500k</li>
-                <li><i class="fa-solid fa-check"></i> Bảo hành vàng 1 đổi 1 trong 12 tháng</li>
-                <li><i class="fa-solid fa-check"></i> Hỗ trợ kỹ thuật VIP 24/7</li>
-            </ul>
-            <a href="#order" class="btn-main" style="width: 100%; justify-content: center;">Đặt Mua Ngay Ưu Đãi Này</a>
-        </div>
-    </section>
-
-    <!-- Checkout / Form Section -->
-    <section class="checkout-section" id="order">
-        <div class="form-container">
-            <div class="section-title" style="margin-bottom: 30px;">
-                <h2>Đăng Ký Đặt Hàng Nhanh</h2>
-                <p>Điền thông tin bên dưới để chốt đơn và nhận ưu đãi đặc biệt ngay lập tức</p>
+            <p>© 2026 Zynix Digital Hub. Tất cả các quyền được bảo lưu.</p>
+            <div class="mt-4 sm:mt-0 flex space-x-4">
+                <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-facebook text-lg"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-tiktok text-lg"></i></a>
             </div>
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đặt hàng! Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất.');">
-                <div class="form-group">
-                    <label for="name">Họ và tên của bạn *</label>
-                    <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Số điện thoại liên hệ *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Ví dụ: 0912345678" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Địa chỉ nhận hàng chi tiết *</label>
-                    <textarea id="address" name="address" rows="3" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành phố" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="note">Ghi chú thêm (Tùy chọn)</label>
-                    <input type="text" id="note" name="note" placeholder="Ví dụ: Giao hàng giờ hành chính">
-                </div>
-                <button type="submit" class="btn-submit">
-                    <i class="fa-solid fa-check-circle"></i> Gửi Thông Tin Đặt Hàng
-                </button>
-                <div class="security-note">
-                    <i class="fa-solid fa-lock"></i> Thông tin của bạn được bảo mật tuyệt đối 100%
-                </div>
-            </form>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 BrandName. Tất cả các quyền được bảo lưu.</p>
-        <p>Hotline hỗ trợ: 1900 xxxx - Email: support@domain.com</p>
     </footer>
 
 </body>
