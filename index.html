@@ -1,870 +1,355 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tidingsk Integrity - Thế Giới Mua Sắm Tất Cả Trong Một</title>
-    <link href="https://tidingsk.github.io/" rel="canonical">
-    <link href="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" rel="icon" type="image/png">
-    
-    <style>
-        :root {
-            --primary: #ff0050;
-            --primary-hover: #e00046;
-            --secondary: #00f2fe;
-            --dark: #121212;
-            --dark-card: #1e1e1e;
-            --light-bg: #f8f9fa;
-            --text-dark: #111827;
-            --text-muted: #6b7280;
-            --zalo-color: #0068ff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Top Bar Announcement */
-        .top-bar {
-            background: linear-gradient(90deg, #111, #222);
-            color: #fff;
-            padding: 8px 16px;
-            text-align: center;
-            font-size: 13px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .top-bar a {
-            color: var(--secondary);
-            font-weight: bold;
-            margin-left: 5px;
-        }
-
-        /* Header Navigation */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 20px;
-        }
-
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-group img {
-            height: 40px;
-            width: auto;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-weight: 800;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            color: var(--dark);
-        }
-
-        .logo-sub {
-            font-size: 11px;
-            color: var(--primary);
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        nav.nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        nav.nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-live-nav {
-            background: rgba(255, 0, 80, 0.1);
-            color: var(--primary) !important;
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            animation: pulse-animation 1.5s infinite;
-        }
-
-        @keyframes pulse-animation {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 0, 80, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 80, 0); }
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 60px 20px;
-            background: radial-gradient(circle at top right, rgba(255, 0, 80, 0.05), transparent 40%);
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .badge-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 16px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            line-height: 1.2;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 24px;
-        }
-
-        /* Countdown Box */
-        .countdown-box {
-            background: linear-gradient(135deg, #111 0%, #222 100%);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 24px;
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(255, 0, 80, 0.15);
-        }
-
-        .countdown-title {
-            color: var(--primary);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .countdown-timer-display {
-            font-size: 18px;
-            font-weight: 800;
-            color: #ffe600;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 10px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-left: 6px;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
-        }
-
-        .btn-zalo {
-            background: var(--zalo-color);
-            color: #fff;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 24px;
-            border-top: 1px solid #eee;
-            padding-top: 24px;
-        }
-
-        .stat-val {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .stat-lbl {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        .hero-img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Categories Section */
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-subtitle {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        .section-heading {
-            font-size: 28px;
-            font-weight: 800;
-            margin-top: 4px;
-        }
-
-        .categories-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            padding: 0 20px 60px 20px;
-        }
-
-        .cat-card {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 24px;
-            transition: transform 0.2s;
-        }
-
-        .cat-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-        }
-
-        /* Showcase Grid */
-        .showcase {
-            background: var(--light-bg);
-            padding: 60px 20px;
-        }
-
-        .products-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .product-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .prod-img-wrap {
-            position: relative;
-            padding-top: 100%;
-        }
-
-        .prod-img-wrap img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .prod-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .prod-details {
-            padding: 16px;
-        }
-
-        .prod-brand {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .prod-title {
-            font-size: 15px;
-            font-weight: 700;
-            margin: 4px 0 8px 0;
-            line-height: 1.4;
-            height: 42px;
-            overflow: hidden;
-        }
-
-        .prod-price {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .btn-tiktok {
-            display: block;
-            text-align: center;
-            background: var(--dark);
-            color: #fff;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-        }
-
-        .btn-tiktok:hover {
-            background: #000;
-        }
-
-        /* Reviews Section (Screenshots Grid) */
-        .reviews-section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 30px;
-        }
-
-        .review-card {
-            background: #fff;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        .review-img-wrap {
-            position: relative;
-            padding-top: 75%;
-            background: #f0f0f0;
-        }
-
-        .review-img-wrap img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .review-content {
-            padding: 16px;
-        }
-
-        .review-stars {
-            color: #ffb800;
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-
-        .review-text {
-            font-size: 14px;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .review-source {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 8px;
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: #888;
-            padding: 40px 20px 20px 20px;
-            border-top: 1px solid #222;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-top {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #222;
-        }
-
-        .footer-bottom {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            font-size: 13px;
-        }
-
-        .footer-extra-links {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .footer-extra-links a {
-            color: #666;
-            transition: color 0.2s;
-        }
-
-        .footer-extra-links a:hover {
-            color: #fff;
-        }
-
-        /* Fixed Floating Buttons */
-        .fixed-actions {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 32px;
-            }
-            nav.nav-links {
-                display: none; /* Thu gọn trên mobile */
-            }
-        }
-    </style>
+    <link rel="canonical" href="https://tidingsk.github.io/">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white">
 
-    <!-- Announcement Banner -->
-    <div class="top-bar">
-         Siêu hội mua sắm công nghệ – Miễn phí vận chuyển toàn quốc cho đơn từ 200K! 
-        <a href="#showcase">Săn Deal Ngay →</a>
-    </div>
-
-    <!-- Header Navigation -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo-group">
-                <img alt="Tidingsk Integrity Logo" src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png">
-                <div class="logo-text">
-                    <span class="logo-title">TIDINGSK INTEGRITY</span>
-                    <span class="logo-sub">Official Store</span>
-                </div>
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Integrity Logo" class="w-10 h-10 object-contain rounded-lg">
+                <span class="font-bold tracking-wider text-lg bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">TIDINGSK INTEGRITY</span>
             </a>
 
-            <!-- Menu chính loại bỏ link tải game/donate -->
-            <nav class="nav-links">
-                <a href="#categories">Danh Mục Ngành Hàng</a>
-                <a href="#showcase">Gian Hàng Tổng Hợp</a>
-                <a href="#reviews">Đánh Giá Thực Tế</a>
-                <a href="https://www.tiktok.com/@tidingsk/live" target="_blank" rel="noopener noreferrer" class="btn-live-nav">
-                    <span class="pulse-dot"></span>
-                    <span>LIVE 23:15 PM</span>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#categories" class="hover:text-purple-400 transition-colors">Danh Mục Ngành Hàng</a>
+                <a href="#showcase" class="hover:text-purple-400 transition-colors">Gian Hàng Tổng Hợp</a>
+                <a href="#reviews" class="hover:text-purple-400 transition-colors">Đánh Giá</a>
+                
+                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition-all">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                    </span>
+                    <span class="font-bold text-xs">LIVE</span>
                 </a>
-                <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" style="color: var(--zalo-color);">
-                    💬 Chat Zalo
-                </a>
+                <a href="https://www.wherewindsmeetgame.com" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors">Tải Game</a>
+                <a href="https://buymeacoffee.com/tidingsk" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors">Donate</a>
             </nav>
+
+            <!-- Extra Action -->
+            <div class="hidden sm:block">
+                <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all">
+                    VNPAY
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div>
-                <div class="badge-tag">
-                     Siêu Thị Tạp Hóa Công Nghệ & Tiện Ích
-                </div>
-                <h1>Thế Giới Mua Sắm <br><span>Tất Cả Trong Một</span></h1>
-                <p class="hero-desc">
-                    Chào mừng bạn đến với gian hàng tổng hợp của <strong>Tidingsk Integrity</strong>. Nơi cung cấp đầy đủ từ pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh cho đến phụ kiện thông minh chính hãng.
-                </p>
-
-                <!-- Đồng Hồ Đếm Ngược Livestream -->
-                <div class="countdown-box">
-                    <div class="countdown-title">
-                        <span class="pulse-dot"></span>
-                        Livestream Săn Deal Tiếp Theo (23:15 Hằng Ngày)
+    <section class="relative overflow-hidden py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Siêu Thị Tạp Hóa Công Nghệ & Tiện Ích Đa Dạng</span>
                     </div>
-                    <div>
-                        Diễn ra sau: 
-                        <span id="countdown-timer" class="countdown-timer-display">00:00:00</span>
-                    </div>
-                </div>
-
-                <!-- CTA Buttons -->
-                <div class="cta-group">
-                    <a href="#showcase" class="btn btn-primary">Khám Phá Gian Hàng</a>
-                    <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" class="btn btn-zalo">
-                        💬 Tư Vấn Zalo: 0968.122.893
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div>
-                        <div class="stat-val">100%</div>
-                        <div class="stat-lbl">Chính Hãng Uy Tín</div>
-                    </div>
-                    <div>
-                        <div class="stat-val">24/7</div>
-                        <div class="stat-lbl">Hỗ Trợ Tư Vấn Nhanh</div>
-                    </div>
-                    <div>
-                        <div class="stat-val">11:15 PM</div>
-                        <div class="stat-lbl">Livestream Mỗi Đêm</div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Thế Giới Mua Sắm <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-rose-500 bg-clip-text text-transparent">Tất Cả Trong Một</span>
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                        Chào mừng bạn đến với gian hàng tổng hợp của Tidingsk Integrity. Nơi cung cấp đầy đủ từ pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh cho đến phụ kiện thông minh chính hãng với giá tốt nhất thị trường.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#showcase" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-bag-shopping"></i> Khám Phá Gian Hàng Ngay
+                        </a>
+                        <a href="tel:0968122893" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-phone text-purple-400"></i> Tư Vấn: 0968 122 893
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <div>
-                <img class="hero-img" alt="Hệ sinh thái thiết bị công nghệ Tidingsk Integrity" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80">
+                
+                <div class="relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-xl"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Hệ sinh thái thiết bị công nghệ và phụ kiện thông minh chính hãng Tidingsk Integrity" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="533">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section id="categories" style="padding: 60px 20px;">
-        <div class="section-title">
-            <span class="section-subtitle">Danh Mục Chọn Lọc</span>
-            <h2 class="section-heading">Các Ngành Hàng Chủ Lực Tại Shop</h2>
-        </div>
-        <div class="categories-grid">
-            <div class="cat-card">
-                <h3>🖥️ Màn Hình & PC</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Màn hình máy tính văn phòng, gaming, PC lắp sẵn cấu hình cao.</p>
+    <section id="categories" class="py-16 bg-slate-900/50 border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">Các Ngành Hàng Chủ Lực Tại Shop</h2>
+                <p class="text-slate-400">Đa dạng lựa chọn, đáp ứng mọi nhu cầu từ làm việc, giải trí đến đời sống.</p>
             </div>
-            <div class="cat-card">
-                <h3>🎙️ Thiết Bị Âm Thanh</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Sound card chuyên nghiệp, Micro livestream, tai nghe gaming.</p>
-            </div>
-            <div class="cat-card">
-                <h3>🔋 Phụ Kiện Số</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Sạc dự phòng dung lượng lớn, cáp sạc nhanh đa năng.</p>
-            </div>
-            <div class="cat-card">
-                <h3>⚡ Tiện Ích Độc Đáo</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Gia dụng thông minh, thiết bị bắt trend công nghệ hiện đại.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Grid (TikTok Products) -->
-    <section id="showcase" class="showcase">
-        <div class="section-title">
-            <span class="section-subtitle">TikTok Shop Showcase Trực Quan</span>
-            <h2 class="section-heading">Gian Hàng Tổng Hợp Hot Nhất</h2>
-        </div>
-
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div>
-                    <div class="prod-img-wrap">
-                        <span class="prod-badge">-58%</span>
-                        <img alt="Pin sạc dự phòng GUTEK" src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-desktop"></i>
                     </div>
-                    <div class="prod-details">
-                        <span class="prod-brand">GUTEK</span>
-                        <h3 class="prod-title">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
-                        <div class="prod-price">250.000đ</div>
-                    </div>
+                    <h3 class="font-bold text-lg mb-2">Màn Hình & PC</h3>
+                    <p class="text-slate-400 text-sm">Màn hình máy tính, PC Gaming, linh kiện...</p>
                 </div>
-                <div style="padding: 0 16px 16px 16px;">
-                    <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" target="_blank" rel="noopener noreferrer" class="btn-tiktok">Mua trên TikTok Shop</a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div>
-                    <div class="prod-img-wrap">
-                        <span class="prod-badge">-20%</span>
-                        <img alt="Maono G1 NEO" src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80">
+                <!-- Item 2 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-headphones-simple"></i>
                     </div>
-                    <div class="prod-details">
-                        <span class="prod-brand">Maono Vietnam</span>
-                        <h3 class="prod-title">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
-                        <div class="prod-price">1.169.000đ</div>
-                    </div>
+                    <h3 class="font-bold text-lg mb-2">Thiết Bị Âm Thanh</h3>
+                    <p class="text-slate-400 text-sm">Sound card, Micro, tai nghe gaming...</p>
                 </div>
-                <div style="padding: 0 16px 16px 16px;">
-                    <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" target="_blank" rel="noopener noreferrer" class="btn-tiktok">Mua trên TikTok Shop</a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div>
-                    <div class="prod-img-wrap">
-                        <span class="prod-badge">-28%</span>
-                        <img alt="Màn hình máy tính Edra" src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg">
+                <!-- Item 3 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt-lightning"></i>
                     </div>
-                    <div class="prod-details">
-                        <span class="prod-brand">Ziczac Computer</span>
-                        <h3 class="prod-title">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
-                        <div class="prod-price">1.440.000đ</div>
-                    </div>
+                    <h3 class="font-bold text-lg mb-2">Phụ Kiện Số</h3>
+                    <p class="text-slate-400 text-sm">Sạc dự phòng, cáp sạc, phụ kiện điện thoại...</p>
                 </div>
-                <div style="padding: 0 16px 16px 16px;">
-                    <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" target="_blank" rel="noopener noreferrer" class="btn-tiktok">Mua trên TikTok Shop</a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div>
-                    <div class="prod-img-wrap">
-                        <span class="prod-badge">HOT</span>
-                        <img alt="Bàn phím cơ XunFox" src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg">
+                <!-- Item 4 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-boxes-stacked"></i>
                     </div>
-                    <div class="prod-details">
-                        <span class="prod-brand">Tidingsk Select</span>
-                        <h3 class="prod-title">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu</h3>
-                        <div class="prod-price">233.000đ</div>
-                    </div>
-                </div>
-                <div style="padding: 0 16px 16px 16px;">
-                    <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" target="_blank" rel="noopener noreferrer" class="btn-tiktok">Mua trên TikTok Shop</a>
+                    <h3 class="font-bold text-lg mb-2">Hàng Tiện Ích Khác</h3>
+                    <p class="text-slate-400 text-sm">Sản phẩm gia dụng thông minh, bắt trend...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Real Reviews Section (Grid Ảnh Thực Tế TikTok Shop) -->
-    <section id="reviews" class="reviews-section">
-        <div class="section-title">
-            <span class="section-subtitle">Phản Hồi Minh Bạch</span>
-            <h2 class="section-heading">Đánh Giá Thực Tế Từ Khách Hàng TikTok Shop</h2>
+    <!-- Showcase Section -->
+    <section id="showcase" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-medium">
+                    <i class="fa-solid fa-store"></i>
+                    <span>TikTok Shop Showcase Trực Quan</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Gian Hàng Tổng Hợp Tidingsk Integrity</h2>
+                <p class="text-slate-400">Khám phá các sản phẩm hot nhất hiện tại trên gian hàng của chúng tôi. Bấm nút Mua Ngay để xem chi tiết và chốt đơn trực tiếp trên TikTok Shop.</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Product 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-58%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">GUTEK</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
+                        <div class="text-rose-400 font-bold text-lg">250.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-20%</span>
+                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Maono Vietnam</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
+                        <div class="text-rose-400 font-bold text-lg">1.169.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-28%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Ziczac Computer</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
+                        <div class="text-rose-400 font-bold text-lg">1.440.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-57%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">StaFor</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
+                        <div class="text-rose-400 font-bold text-lg">62.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu, Phím ABS Gõ Êm</h3>
+                        <div class="text-rose-400 font-bold text-lg">233.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Màn hình di động thông minh Azopa</h3>
+                        <div class="text-rose-400 font-bold text-lg">2.250.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Webcam kép EMEET C60E 4K Dual với điều khiển, đèn RGB</h3>
+                        <div class="text-rose-400 font-bold text-lg">536.607đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Tai nghe chụp Gaming XSTAR G93 có mic đàm thoại, LED RGB</h3>
+                        <div class="text-rose-400 font-bold text-lg">315.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-12">
+                <a href="https://vt.tiktok.com/ZS9hWMRd4UB46-w0Jrf" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 transition-all">
+                    <i class="fa-brands fa-tiktok text-rose-500"></i> Xem Trên Điện Thoại Toàn Bộ Gian Hàng TikTok Shop
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="reviews-grid">
-            <!-- Review Card 1 -->
-            <div class="review-card">
-                <div class="review-img-wrap">
-                    <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/feedback1.jpg" alt="Ảnh chụp thực tế đánh giá TikTok Shop 1" onerror="this.src='https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80'">
-                </div>
-                <div class="review-content">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"Giao hàng cực nhanh, đóng gói chắc chắn. Sạc dự phòng GUTEK dùng êm, đúng dung lượng!"</p>
-                    <span class="review-source">Đã xác minh mua hàng trên TikTok Shop</span>
-                </div>
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">Khách Hàng Nói Gì Về Chúng Tôi?</h2>
+                <p class="text-slate-400">Sự hài lòng của khách hàng là động lực phát triển của Tidingsk Integrity.</p>
             </div>
-
-            <!-- Review Card 2 -->
-            <div class="review-card">
-                <div class="review-img-wrap">
-                    <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/feedback2.jpg" alt="Ảnh chụp thực tế đánh giá TikTok Shop 2" onerror="this.src='https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80'">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic">"Shop chuyên cung cấp sạc dự phòng, màn hình và thiết bị âm thanh cực kỳ uy tín. Giao hàng nhanh và tư vấn rất có tâm!"</p>
+                    </div>
+                    <span class="text-xs font-semibold text-purple-400">- Chị Mỹ Linh (Đà Nẵng)</span>
                 </div>
-                <div class="review-content">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"Màn hình Edra 144Hz nét căng, không điểm chết. Shop tư vấn Zalo cực kỳ nhiệt tình."</p>
-                    <span class="review-source">Đã xác minh mua hàng trên TikTok Shop</span>
+                <!-- Review 2 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic">"Trang tổng hợp sản phẩm trực quan, bấm vào là hiện ra gian hàng TikTok Shop liền. Rất tiện lợi cho việc săn sale đồ công nghệ."</p>
+                    </div>
+                    <span class="text-xs font-semibold text-purple-400">- Bạn Đức Duy (Hà Nội)</span>
                 </div>
-            </div>
-
-            <!-- Review Card 3 -->
-            <div class="review-card">
-                <div class="review-img-wrap">
-                    <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/feedback3.jpg" alt="Ảnh chụp thực tế đánh giá TikTok Shop 3" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80'">
-                </div>
-                <div class="review-content">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"Săn deal lúc xem livestream đêm giá hời lắm luôn. Tai nghe mic rõ nét, đèn LED đẹp."</p>
-                    <span class="review-source">Đã xác minh mua hàng trên TikTok Shop</span>
+                <!-- Review 3 -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic">"Mua cái màn hình Edra bên shop dùng mượt mà, giá lại mềm hơn mấy chỗ khác. Chắc chắn sẽ ủng hộ thêm các phụ kiện khác."</p>
+                    </div>
+                    <span class="text-xs font-semibold text-purple-400">- Anh Hoàng Nam (TP. Hồ Chí Minh)</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-top">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <img alt="Tidingsk Logo" src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" style="height: 36px;">
-                    <div>
-                        <div style="color: #fff; font-weight: 700;">Tidingsk Integrity Store</div>
-                        <div style="font-size: 13px;">Hotline/Zalo: <a href="https://zalo.me/0968122893" style="color: var(--zalo-color); font-weight: bold;">0968.122.893</a></div>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 12px;">
-                    <a href="https://www.tiktok.com/@tidingsk/live" target="_blank" rel="noopener noreferrer" style="color: #fff; background: #222; padding: 6px 12px; border-radius: 6px; font-size: 13px;">TikTok Live</a>
-                    <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" style="color: #fff; background: var(--zalo-color); padding: 6px 12px; border-radius: 6px; font-size: 13px;">Zalo Chat</a>
-                </div>
+    <footer class="bg-slate-950 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" alt="Tidingsk Logo" class="w-8 h-8 object-contain">
+                <span class="text-xs text-slate-400">© 2026 Tidingsk Integrity. Live broadcast every day at 11:15 PM (UTC+7).</span>
             </div>
-
-            <!-- Chuyển các liên kết phụ xuống Footer -->
-            <div class="footer-bottom">
-                <div>© 2026 Tidingsk Integrity. All rights reserved.</div>
-                
-                <div class="footer-extra-links">
-                    <a href="https://www.wherewindsmeetgame.com" target="_blank" rel="noopener noreferrer">🎮 Tải Game Where Winds Meet</a>
-                    <a href="https://buymeacoffee.com/tidingsk" target="_blank" rel="noopener noreferrer">☕ Donate Ủng Hộ Shop</a>
-                    <a href="https://vnngsolutions.github.io" target="_blank" rel="noopener noreferrer">🌐 VNPAY Solutions</a>
-                </div>
+            <div class="flex items-center gap-6 text-sm text-slate-400">
+                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-tiktok"></i> Live</a>
+                <a href="https://www.youtube.com/@tidingsk" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                <a href="https://zalo.me/0968122893" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-solid fa-comment-sms"></i> Zalo</a>
+                <a href="https://www.facebook.com/tiding.sk.2024" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-facebook"></i> Facebook</a>
             </div>
         </div>
     </footer>
-
-    <!-- Fixed Action Floating Buttons -->
-    <div class="fixed-actions">
-        <a href="https://zalo.me/0968122893" target="_blank" class="float-btn" style="background: var(--zalo-color);" title="Chat Zalo">Zalo</a>
-    </div>
-
-    <!-- Script đếm ngược tự động 23:15 mỗi ngày -->
-    <script>
-        function initCountdown() {
-            function updateTimer() {
-                const now = new Date();
-                let target = new Date();
-                
-                // Đặt mốc 23:15:00 hôm nay
-                target.setHours(23, 15, 0, 0);
-
-                // Nếu thời gian hiện tại đã qua 23:15, chuyển mục tiêu sang 23:15 ngày mai
-                if (now > target) {
-                    target.setDate(target.getDate() + 1);
-                }
-
-                const diff = target - now;
-
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                const pad = (n) => String(n).padStart(2, '0');
-
-                const timerEl = document.getElementById('countdown-timer');
-                if (timerEl) {
-                    timerEl.innerText = `${pad(hours)} : ${pad(minutes)} : ${pad(seconds)}`;
-                }
-            }
-
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        }
-
-        document.addEventListener('DOMContentLoaded', initCountdown);
-    </script>
-</body>
-</html>
