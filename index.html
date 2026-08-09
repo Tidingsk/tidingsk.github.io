@@ -31,23 +31,15 @@
                     <a href="#reviews" class="hover:text-purple-400 transition-colors">Đánh Giá</a>
                 </nav>
 
-                <!-- CỤM TIỆN ÍCH (KHOANH VÀNG) - Hiển thị trên cả Desktop & Mobile -->
+                <!-- CỤM TIỆN ÍCH (Gồm Đồng hồ Livestream click được + VNPAY) -->
                 <div class="flex items-center gap-1.5 sm:gap-2">
-                    <!-- Nút LIVE -->
-                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20 transition-all shrink-0">
-                        <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-                        </span>
-                        <span class="font-bold text-xs">LIVE</span>
-                    </a>
 
-                    <!-- Đồng hồ đếm ngược -->
-                    <div class="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg bg-purple-950/50 border border-purple-500/30 text-purple-300 font-mono text-xs shadow-inner shrink-0">
+                    <!-- Đồng hồ đếm ngược có gắn link đến TikTok Live -->
+                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" title="Xem TikTok LIVE" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-purple-950/50 border border-purple-500/30 text-purple-300 font-mono text-xs shadow-inner shrink-0 hover:bg-purple-900/60 hover:border-purple-400/50 transition-all">
                         <i class="fa-regular fa-clock text-pink-400 animate-pulse"></i>
                         <span class="hidden md:inline text-slate-400 font-sans text-xs">Live 23:15:</span>
                         <span id="live-countdown" class="font-bold text-purple-200 tracking-wider">00:00:00</span>
-                    </div>
+                    </a>
 
                     <!-- Nút VNPAY Logo -->
                     <a href="https://vnngsolutions.github.io" rel="noopener noreferrer" target="_blank" title="VNPAY" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-blue-500 flex items-center justify-center overflow-hidden hover:scale-105 active:scale-95 transition-all shrink-0 shadow-md">
@@ -55,13 +47,13 @@
                     </a>
                 </div>
 
-                <!-- Nút 3 gạch (Hamburger Menu - Đặt ở bên phải cụm màu vàng, chỉ hiện ở Mobile) -->
+                <!-- Nút 3 gạch (Hamburger Menu - Đặt ở bên phải cụm tiện ích, chỉ hiện ở Mobile) -->
                 <button id="mobile-menu-btn" aria-label="Toggle Navigation" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 transition-colors shrink-0">
                     <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
                 </button>
             </div>
 
-            <!-- Mobile Menu Dropdown (Thu gọn khoanh đỏ khi bấm nút 3 gạch trên mobile) -->
+            <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="hidden lg:hidden absolute top-full right-4 mt-2 w-64 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-4 flex-col gap-3 z-50 backdrop-blur-xl">
                 <a href="#categories" class="mobile-nav-link text-slate-200 hover:text-purple-400 font-medium py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-all flex items-center gap-2">
                     <i class="fa-solid fa-layer-group text-purple-400 w-5"></i> Danh Mục Ngành Hàng
