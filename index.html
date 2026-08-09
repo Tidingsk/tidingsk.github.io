@@ -31,17 +31,17 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 12px;
+            gap: 10px;
         }
         .float-btn-item {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .float-btn-item:active, .float-btn-item:hover {
@@ -56,7 +56,7 @@
         }
         @keyframes pulse-zalo {
             0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 104, 255, 0); }
+            70% { box-shadow: 0 0 0 8px rgba(0, 104, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
         }
         .coffee-steam {
@@ -71,8 +71,8 @@
             100% { opacity: 0; transform: translateY(-3.5px); }
         }
         @media (max-width: 768px) {
-            .floating-buttons-stack { right: 16px; bottom: 16px; gap: 10px; }
-            .float-btn-item { width: 44px; height: 44px; }
+            .floating-buttons-stack { right: 14px; bottom: 14px; gap: 8px; }
+            .float-btn-item { width: 36px; height: 36px; }
         }
     </style>
 </head>
@@ -149,15 +149,6 @@
                     <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
                         Chào mừng bạn đến với gian hàng tổng hợp của Tidingsk Integrity. Cung cấp pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh chính hãng với giá ưu đãi cực tốt.
                     </p>
-                    <div class="p-4 rounded-xl bg-gradient-to-r from-purple-900/40 via-pink-900/40 to-slate-900 border border-pink-500/30 flex items-center gap-3 shadow-lg">
-                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400 shrink-0 text-xl">
-                            <i class="fa-solid fa-ticket"></i>
-                        </div>
-                        <div class="text-left text-xs sm:text-sm">
-                            <span class="font-bold text-pink-300 block">🔥 Ưu Đãi Độc Quyền TikTok Live (23:15 mỗi đêm):</span>
-                            <span class="text-slate-300">Săn Mã Giảm Giá Đến <strong class="text-amber-400">50%</strong> + Freeship Toàn Quốc khi chốt đơn trực tiếp trên Live!</span>
-                        </div>
-                    </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                         <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-xl btn-cta-neon text-white font-bold shadow-lg flex items-center justify-center gap-2 transition-all text-base">
                             <i class="fa-solid fa-bag-shopping"></i> Khám Phá Gian Hàng Ngay
@@ -178,7 +169,7 @@
         </div>
     </section>
 
-    <!-- 3. SỐ LIỆU ẤN TƯỢNG (Social Proof Stats Bar) -->
+    <!-- Số liệu ấn tượng -->
     <section class="py-6 bg-purple-950/30 border-y border-purple-900/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-3 gap-4 text-center">
@@ -198,7 +189,7 @@
         </div>
     </section>
 
-    <!-- 5. MỤC GỢI Ý THEO NHU CẦU (Cho người dùng phân vân) -->
+    <!-- Mục gợi ý theo nhu cầu -->
     <section id="recommendations" class="py-12 bg-slate-900/30 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
@@ -279,7 +270,7 @@
         </div>
     </section>
 
-    <!-- Showcase Section (Thẻ sản phẩm 1-Click + CTA Neon + Tín hiệu tin cậy) -->
+    <!-- Showcase Section -->
     <section id="showcase" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -545,7 +536,7 @@
         </div>
     </section>
 
-    <!-- Reviews Section (3. ĐÁNH GIÁ VIDEO UNBOXING) -->
+    <!-- Reviews Section -->
     <section id="reviews" class="py-20 bg-slate-900/50 border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -610,7 +601,7 @@
         </div>
     </section>
 
-    <!-- 2. POPUP FOMO THÔNG BÁO CHỐT ĐƠN TỰ ĐỘNG -->
+    <!-- Popup FOMO Thông Báo Chốt Đơn -->
     <div id="fomo-popup" class="fixed bottom-5 left-5 z-50 transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
         <div class="bg-slate-900/95 border border-purple-500/40 backdrop-blur-md rounded-xl p-3 shadow-2xl flex items-center gap-3 max-w-sm">
             <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white shrink-0 font-bold text-sm">
@@ -623,16 +614,16 @@
         </div>
     </div>
 
-    <!-- Cụm Nút Floating (5. CÓ BÓNG CHAT TỰ ĐỘNG CHO ZALO) -->
+    <!-- Cụm Nút Floating (Kích thước gọn gàng 40px) -->
     <div class="floating-buttons-stack">
-        <!-- Bóng chat gọi mở Zalo cho người dùng phân vân -->
+        <!-- Bóng chat Zalo -->
         <div class="hidden sm:flex items-center bg-slate-900 border border-blue-500/40 px-3 py-1.5 rounded-xl shadow-lg text-xs text-slate-200 animate-pulse mb-1">
             <span>Bạn cần tư vấn chọn màn hình hay tai nghe phù hợp?</span>
         </div>
         
         <!-- Nút Zalo -->
         <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-zalo" aria-label="Chat Zalo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="#FFFFFF">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="#FFFFFF">
                 <path d="M440.1 361.6c-11.4-18.3-25.2-34.9-41.2-49.4 20-31.4 31.6-68.5 31.6-108.3C430.5 91.4 330.3 0 206.8 0 83.2 0-17 91.4-17 203.9s100.2 203.9 223.8 203.9c32 0 62.5-6.6 90.2-18.6 30.6 28.1 70.8 45 113.8 45.8 8.1.2 14.8-6.2 15.2-14.3.4-8.1-5.6-15.1-13.6-15.8-28.7-2.7-55.2-14.6-76.1-33.3 39-25.8 68.3-64 82.2-110c.8 0 1.6 0 2.4 0 9.1 0 16.5-7.4 16.5-16.5 0-9.1-7.4-16.5-16.5-16.5zM206.8 375.8c-94.8 0-171.8-77-171.8-171.9S112 32 206.8 32s171.8 77 171.8 171.9c0 41.3-14.7 79.3-39.3 109.1-3.6 4.4-4 10.6-1 15.4 12.8 20.3 22.3 42.6 28.1 66-23.7-6.2-45.7-18.2-63.5-35-3.8-3.6-9.5-4.5-14.2-2.2-27 13.3-57.2 20.6-88.7 20.6z"/>
                 <path d="M125 150h150v25H125zm0 50h150v25H125zm0 50h100v25H125z"/>
             </svg>
@@ -640,7 +631,7 @@
 
         <!-- Nút Buy Me A Coffee -->
         <a href="https://buymeacoffee.com/tidingsk" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-coffee" aria-label="Donate BuyMeACoffee">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                 <path class="coffee-steam" d="M7.5 2c-.6.8.6 1.6 0 2.4" stroke="#000000" stroke-width="1.3" stroke-linecap="round"/>
                 <path class="coffee-steam steam-2" d="M11.5 1.2c-.6.8.6 1.6 0 2.4" stroke="#000000" stroke-width="1.3" stroke-linecap="round"/>
                 <path class="coffee-steam steam-3" d="M15.5 2c-.6.8.6 1.6 0 2.4" stroke="#000000" stroke-width="1.3" stroke-linecap="round"/>
