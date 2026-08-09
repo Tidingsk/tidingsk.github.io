@@ -6,66 +6,9 @@
     <title>Tidingsk Integrity - Thế Giới Mua Sắm Tất Cả Trong Một</title>
     <link rel="canonical" href="https://tidingsk.github.io/">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png">
-    
-    <!-- 1. Tối ưu Tốc độ Tải trang: Thay CDN JS bằng CSS tĩnh compiled để giảm FCP -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- 2. Thêm Mã Bổ Sung SEO (Schema.org JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://tidingsk.github.io/#organization",
-          "name": "Tidingsk Integrity",
-          "url": "https://tidingsk.github.io/",
-          "logo": "https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+84-968122893",
-            "contactType": "customer service"
-          }
-        },
-        {
-          "@type": "Product",
-          "name": "Pin sạc dự phòng GUTEK 20.000mAh",
-          "image": "https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg",
-          "description": "Pin sạc dự phòng 20.000mAh cao cấp tặng kèm sạc 3 đầu",
-          "offers": {
-            "@type": "Offer",
-            "price": "250000",
-            "priceCurrency": "VND",
-            "availability": "https://schema.org/InStock"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "1800"
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- 2. Thêm Mã Bổ Sung Tracking (Google Analytics 4 & TikTok Pixel) -->
-    <!-- Google Tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-MEASUREMENT_ID');
-    </script>
-    <!-- TikTok Pixel Code -->
-    <script>
-    !function (w, d, t) {
-      w.TikTokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","attach"]["forEach"](function(e){ttq[e]=function(){ttq.push([e].concat(Array.prototype.slice.call(arguments,0)))}});
-      ttq.page();
-    }(window, document, 'ttq');
-    </script>
-
     <style>
         /* CSS Custom cho Nút CTA Neon & Hiệu ứng */
         .btn-cta-neon {
@@ -127,21 +70,10 @@
             50% { opacity: 0.85; }
             100% { opacity: 0; transform: translateY(-3.5px); }
         }
-        
-        /* 3. Tương thích giao diện (UI Polish): Tối ưu padding-bottom hỗ trợ iPhone Home Bar (safe-area) */
         @media (max-width: 768px) {
-            .floating-buttons-stack { 
-                right: 14px; 
-                bottom: calc(75px + env(safe-area-inset-bottom)); 
-                gap: 8px; 
-            }
+            .floating-buttons-stack { right: 14px; bottom: 75px; gap: 8px; }
             .float-btn-item { width: 36px; height: 36px; }
-            body { 
-                padding-bottom: calc(70px + env(safe-area-inset-bottom)); 
-            }
-            .mobile-sticky-cta {
-                padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
-            }
+            body { padding-bottom: 60px; }
         }
     </style>
 </head>
@@ -167,7 +99,7 @@
 
                 <div class="flex items-center gap-1.5 sm:gap-2">
                     <!-- Đồng hồ đếm ngược Livestream -->
-                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" title="Xem TikTok LIVE & Nhận Voucher Độc Quyền" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-950/80 via-pink-950/80 to-purple-950/80 border border-pink-500/50 text-purple-300 font-mono text-xs shadow-lg shadow-pink-500/10 shrink-0 hover:bg-purple-900/80 hover:border-pink-400 transition-all cta-track">
+                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" title="Xem TikTok LIVE & Nhận Voucher Độc Quyền" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-950/80 via-pink-950/80 to-purple-950/80 border border-pink-500/50 text-purple-300 font-mono text-xs shadow-lg shadow-pink-500/10 shrink-0 hover:bg-purple-900/80 hover:border-pink-400 transition-all">
                         <i class="fa-regular fa-clock text-pink-400 animate-pulse"></i>
                         <span class="hidden md:inline text-slate-300 font-sans text-xs">Live 23:15:</span>
                         <span id="live-countdown" class="font-bold text-pink-300 tracking-wider">00:00:00</span>
@@ -219,7 +151,7 @@
                         Chào mừng bạn đến với gian hàng tổng hợp của Tidingsk Integrity. Cung cấp pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh chính hãng với giá ưu đãi cực tốt.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-xl btn-cta-neon text-white font-bold shadow-lg flex items-center justify-center gap-2 transition-all text-base cta-track">
+                        <a href="#showcase" class="w-full sm:w-auto px-8 py-4 rounded-xl btn-cta-neon text-white font-bold shadow-lg flex items-center justify-center gap-2 transition-all text-base">
                             <i class="fa-solid fa-bag-shopping"></i> Khám Phá Gian Hàng Ngay
                         </a>
                         <a href="tel:0968122893" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 flex items-center justify-center gap-2 transition-all">
@@ -274,11 +206,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Product 1 -->
-                <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-58%</span>
-                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">GUTEK</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
@@ -304,11 +236,11 @@
                 </a>
 
                 <!-- Product 2 -->
-                <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-20%</span>
-                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Maono Vietnam</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
@@ -334,11 +266,11 @@
                 </a>
 
                 <!-- Product 3 -->
-                <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-28%</span>
-                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Ziczac Computer</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
@@ -364,11 +296,11 @@
                 </a>
 
                 <!-- Product 4 -->
-                <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-57%</span>
-                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">StaFor</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
@@ -394,11 +326,11 @@
                 </a>
 
                 <!-- Product 5 -->
-                <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu</h3>
@@ -424,11 +356,11 @@
                 </a>
 
                 <!-- Product 6 -->
-                <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình di động thông minh Azopa 16.1" 144Hz</h3>
@@ -454,11 +386,11 @@
                 </a>
 
                 <!-- Product 7 -->
-                <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Webcam kép EMEET C60E 4K Dual với điều khiển</h3>
@@ -484,11 +416,11 @@
                 </a>
 
                 <!-- Product 8 -->
-                <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block cta-track">
+                <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
-                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy" format="webp">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
                         <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe chụp Gaming XSTAR G93 LED RGB</h3>
@@ -517,7 +449,7 @@
 
             <!-- View All Button -->
             <div class="text-center mt-12">
-                <a href="https://vt.tiktok.com/ZS9hWMRd4UB46-w0Jrf" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 transition-all cta-track">
+                <a href="https://vt.tiktok.com/ZS9hWMRd4UB46-w0Jrf" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-800 transition-all">
                     <i class="fa-brands fa-tiktok text-rose-500"></i> Xem Trên Điện Thoại Toàn Bộ Gian Hàng TikTok Shop
                 </a>
             </div>
@@ -616,7 +548,6 @@
 
             <!-- Grid Đánh Giá Khách Hàng -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <!-- 1. Tối ưu Video Lazy Loading: Thêm preload="none" và poster thumbnail cho cả 3 video -->
                 <!-- Review Video 1: GUTEK -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-slate-700 transition-all">
                     <div class="p-2 bg-slate-950/60 border-b border-slate-800 flex items-center justify-between">
@@ -624,7 +555,7 @@
                         <span class="text-[10px] text-purple-400 font-semibold px-2"><i class="fa-solid fa-circle-play"></i> Video Review</span>
                     </div>
                     <div class="p-1 bg-slate-950">
-                        <video class="w-full h-auto rounded-lg" controls loop muted playsinline preload="none" poster="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg">
+                        <video class="w-full h-auto rounded-lg" controls autoplay loop muted playsinline preload="metadata">
                             <source src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/GUTEK.mp4" type="video/mp4">
                             Trình duyệt của bạn không hỗ trợ thẻ video.
                         </video>
@@ -644,7 +575,7 @@
                         <span class="text-[10px] text-purple-400 font-semibold px-2"><i class="fa-solid fa-circle-play"></i> Video Review</span>
                     </div>
                     <div class="p-1 bg-slate-950">
-                        <video class="w-full h-auto rounded-lg" controls loop muted playsinline preload="none" poster="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80">
+                        <video class="w-full h-auto rounded-lg" controls autoplay loop muted playsinline preload="metadata">
                             <source src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Maono.mp4" type="video/mp4">
                             Trình duyệt của bạn không hỗ trợ thẻ video.
                         </video>
@@ -664,7 +595,7 @@
                         <span class="text-[10px] text-purple-400 font-semibold px-2"><i class="fa-solid fa-circle-play"></i> Video Review</span>
                     </div>
                     <div class="p-1 bg-slate-950">
-                        <video class="w-full h-auto rounded-lg" controls loop muted playsinline preload="none" poster="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg">
+                        <video class="w-full h-auto rounded-lg" controls autoplay loop muted playsinline preload="metadata">
                             <source src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/ARZOPA.mp4" type="video/mp4">
                             Trình duyệt của bạn không hỗ trợ thẻ video.
                         </video>
@@ -680,9 +611,9 @@
         </div>
     </section>
 
-    <!-- 3. Tương thích Sticky CTA Mobile hỗ trợ iPhone Home Bar (mobile-sticky-cta) -->
-    <div class="block md:hidden fixed bottom-0 left-0 right-0 z-50 p-2 bg-slate-950/95 border-t border-purple-500/40 backdrop-blur-lg shadow-2xl mobile-sticky-cta">
-        <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 px-4 rounded-xl btn-cta-neon text-white font-bold text-xs flex items-center justify-between shadow-lg cta-track">
+    <!-- Sticky CTA Mobile -->
+    <div class="block md:hidden fixed bottom-0 left-0 right-0 z-50 p-2 bg-slate-950/95 border-t border-purple-500/40 backdrop-blur-lg shadow-2xl">
+        <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="w-full py-2.5 px-4 rounded-xl btn-cta-neon text-white font-bold text-xs flex items-center justify-between shadow-lg">
             <div class="flex items-center gap-2">
                 <i class="fa-brands fa-tiktok text-sm"></i>
                 <span>Lịch Live 23:15 đêm nay</span>
@@ -715,7 +646,7 @@
         </div>
         
         <!-- Nút Zalo -->
-        <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-zalo cta-track" aria-label="Chat Zalo">
+        <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-zalo" aria-label="Chat Zalo">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="#FFFFFF">
                 <path d="M440.1 361.6c-11.4-18.3-25.2-34.9-41.2-49.4 20-31.4 31.6-68.5 31.6-108.3C430.5 91.4 330.3 0 206.8 0 83.2 0-17 91.4-17 203.9s100.2 203.9 223.8 203.9c32 0 62.5-6.6 90.2-18.6 30.6 28.1 70.8 45 113.8 45.8 8.1.2 14.8-6.2 15.2-14.3.4-8.1-5.6-15.1-13.6-15.8-28.7-2.7-55.2-14.6-76.1-33.3 39-25.8 68.3-64 82.2-110c.8 0 1.6 0 2.4 0 9.1 0 16.5-7.4 16.5-16.5 0-9.1-7.4-16.5-16.5-16.5zM206.8 375.8c-94.8 0-171.8-77-171.8-171.9S112 32 206.8 32s171.8 77 171.8 171.9c0 41.3-14.7 79.3-39.3 109.1-3.6 4.4-4 10.6-1 15.4 12.8 20.3 22.3 42.6 28.1 66-23.7-6.2-45.7-18.2-63.5-35-3.8-3.6-9.5-4.5-14.2-2.2-27 13.3-57.2 20.6-88.7 20.6z"/>
                 <path d="M125 150h150v25H125zm0 50h150v25H125zm0 50h100v25H125z"/>
@@ -743,9 +674,9 @@
             
             <!-- Kênh Mua Sắm & Mạng Xã Hội Chính -->
             <div class="flex items-center gap-5 text-sm text-slate-300 flex-wrap justify-center">
-                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors font-medium cta-track"><i class="fa-brands fa-tiktok text-pink-400"></i> TikTok Live</a>
+                <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors font-medium"><i class="fa-brands fa-tiktok text-pink-400"></i> TikTok Live</a>
                 <a href="https://www.youtube.com/@tidingsk" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors font-medium"><i class="fa-brands fa-youtube text-red-500"></i> Youtube</a>
-                <a href="https://zalo.me/0968122893" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors font-medium cta-track"><i class="fa-solid fa-comment-sms text-blue-400"></i> Zalo Support</a>
+                <a href="https://zalo.me/0968122893" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors font-medium"><i class="fa-solid fa-comment-sms text-blue-400"></i> Zalo Support</a>
                 <a href="https://www.facebook.com/tiding.sk.2024" rel="noopener noreferrer" target="_blank" class="hover:text-purple-400 transition-colors font-medium"><i class="fa-brands fa-facebook text-blue-500"></i> Facebook</a>
             </div>
 
@@ -860,27 +791,6 @@
           });
         });
       }
-
-      // 2. Kịch bản Đo Lường Click CTA (GA4 & TikTok Pixel)
-      document.querySelectorAll('.cta-track').forEach(button => {
-        button.addEventListener('click', function() {
-          const destination = this.getAttribute('href');
-          // Gửi sự kiện tới Google Analytics 4
-          if (typeof gtag === 'function') {
-            gtag('event', 'click_cta', {
-              'event_category': 'Outbound CTA',
-              'event_label': destination
-            });
-          }
-          // Gửi sự kiện tới TikTok Pixel
-          if (typeof ttq === 'object' && typeof ttq.track === 'function') {
-            ttq.track('ClickButton', {
-              content_name: 'CTA_Checkout',
-              destination_url: destination
-            });
-          }
-        });
-      });
     </script>
 </body>
 </html>
