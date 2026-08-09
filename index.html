@@ -133,10 +133,44 @@
             50% { opacity: 0.85; }
             100% { opacity: 0; transform: translateY(-3.5px); }
         }
+
+        /* CSS tùy chỉnh cho Slide có mũi tên ở 2 đầu */
+        .custom-slide-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+        .slide-arrow {
+            background: rgba(147, 51, 234, 0.2);
+            border: 1px solid rgba(147, 51, 234, 0.4);
+            color: #d8b4fe;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            flex-shrink: 0;
+        }
+        .slide-arrow:hover {
+            background: rgba(147, 51, 234, 0.5);
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
         @media (max-width: 768px) {
             .floating-buttons-stack { right: 14px; bottom: 75px; gap: 8px; }
             .float-btn-item { width: 36px; height: 36px; }
             body { padding-bottom: 60px; }
+            .slide-arrow { width: 35px; height: 35px; font-size: 14px; }
         }
     </style>
 </head>
@@ -302,8 +336,15 @@
                 </div>
             </div>
 
-            <!-- Grid Sản Phẩm (Hiển thị 4 sản phẩm đại diện tiêu biểu) -->
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Slide Wrapper có biểu tượng mũi tên ở 2 đầu (theo yêu cầu) -->
+            <div class="custom-slide-wrapper">
+                <!-- Mũi tên trái -->
+                <button id="slide-prev-btn" class="slide-arrow" aria-label="Slide Trước">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- Grid Sản Phẩm (Đóng vai trò khung chứa slide) -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                 
                 <!-- Product 1 -->
                 <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" data-name="Pin sạc dự phòng 20000mAh cao cấp GUTEK" data-brand="GUTEK" data-price="250000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
@@ -425,9 +466,8 @@
                     </div>
                 </a>
 
-                <!-- Các sản phẩm từ 5 đến 8 vẫn được giữ lại ngầm phục vụ logic tìm kiếm/lọc -->
                 <!-- Product 5 -->
-                <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" data-name="Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu" data-brand="Tidingsk Select" data-price="233000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" data-name="Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu" data-brand="Tidingsk Select" data-price="233000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
@@ -457,7 +497,7 @@
                 </a>
 
                 <!-- Product 6 -->
-                <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" data-name="Màn hình di động thông minh Azopa 16.1 inch 144Hz" data-brand="Tidingsk Select" data-price="2250000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" data-name="Màn hình di động thông minh Azopa 16.1 inch 144Hz" data-brand="Tidingsk Select" data-price="2250000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
@@ -487,7 +527,7 @@
                 </a>
 
                 <!-- Product 7 -->
-                <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" data-name="Webcam kép EMEET C60E 4K Dual với điều khiển" data-brand="Tidingsk Select" data-price="536607" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" data-name="Webcam kép EMEET C60E 4K Dual với điều khiển" data-brand="Tidingsk Select" data-price="536607" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
@@ -517,7 +557,7 @@
                 </a>
 
                 <!-- Product 8 -->
-                <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" data-name="Tai nghe chụp Gaming XSTAR G93 LED RGB" data-brand="Tidingsk Select" data-price="315000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" data-name="Tai nghe chụp Gaming XSTAR G93 LED RGB" data-brand="Tidingsk Select" data-price="315000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
                     <div class="p-4">
                         <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
                             <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
@@ -546,6 +586,12 @@
                     </div>
                 </a>
 
+                </div>
+
+                <!-- Mũi tên phải -->
+                <button id="slide-next-btn" class="slide-arrow" aria-label="Slide Sau">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
 
             <!-- Trạng thái khi không tìm thấy sản phẩm -->
@@ -964,7 +1010,21 @@
         });
       }
 
-      // 5. Đo lường sự kiện (Tracking Pixels) cho các nút CTA chốt đơn
+      // 5. Xử lý tương tác nút mũi tên 2 đầu cho danh sách sản phẩm
+      const slidePrevBtn = document.getElementById('slide-prev-btn');
+      const slideNextBtn = document.getElementById('slide-next-btn');
+      const productGrid = document.getElementById('product-grid');
+
+      if (slidePrevBtn && slideNextBtn && productGrid) {
+        slidePrevBtn.addEventListener('click', () => {
+          productGrid.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        slideNextBtn.addEventListener('click', () => {
+          productGrid.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+      }
+
+      // 6. Đo lường sự kiện (Tracking Pixels) cho các nút CTA chốt đơn
       document.querySelectorAll('.track-cta-btn').forEach(button => {
         button.addEventListener('click', function() {
           // Gửi sự kiện lên Google Analytics 4
