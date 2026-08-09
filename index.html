@@ -7,9 +7,6 @@
     <link rel="canonical" href="https://tidingsk.github.io/">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png">
     
-    <!-- Swiper CSS cho Slider sản phẩm -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <!-- 3. Schema.org Data (JSON-LD) cho SEO -->
     <script type="application/ld+json">
     {
@@ -136,33 +133,6 @@
             50% { opacity: 0.85; }
             100% { opacity: 0; transform: translateY(-3.5px); }
         }
-        /* Custom Swiper Navigation Buttons */
-        .swiper-button-next, .swiper-button-prev {
-            color: #a855f7 !important;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        .swiper-button-next:hover, .swiper-button-prev:hover {
-            background: rgba(168, 85, 247, 0.2);
-            border-color: #a855f7;
-        }
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .swiper-pagination-bullet {
-            background: #64748b;
-            opacity: 1;
-        }
-        .swiper-pagination-bullet-active {
-            background: #a855f7;
-            width: 24px;
-            border-radius: 4px;
-        }
         @media (max-width: 768px) {
             .floating-buttons-stack { right: 14px; bottom: 75px; gap: 8px; }
             .float-btn-item { width: 36px; height: 36px; }
@@ -283,16 +253,16 @@
         </div>
     </section>
 
-    <!-- Showcase Section (ĐÃ THAY THẾ BẰNG SLIDER 4 SẢN PHẨM ĐẠI DIỆN) -->
+    <!-- Showcase Section -->
     <section id="showcase" class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-medium">
                     <i class="fa-solid fa-fire text-rose-500"></i>
-                    <span>Deal Hot Trong Live & Sản Phẩm Đại Diện Tiêu Biểu</span>
+                    <span>Deal Hot Trong Live & Sản Phẩm Bán Chạy</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Gian Hàng Tổng Hợp Tidingsk Integrity</h2>
-                <p class="text-slate-400">Lướt xem nhanh 4 sản phẩm đại diện hoặc bấm vào để mở ngay link chốt đơn ưu đãi trên TikTok Shop.</p>
+                <p class="text-slate-400">Bấm vào bất kỳ sản phẩm nào để mở ngay link chốt đơn ưu đãi trên TikTok Shop.</p>
             </div>
 
             <!-- THANH TÌM KIẾM & LỌC GIÁ NÂNG CAO -->
@@ -332,146 +302,250 @@
                 </div>
             </div>
 
-            <!-- SWIPER SLIDER 4 SẢN PHẨM ĐẠI DIỆN -->
-            <div class="relative px-2 sm:px-10">
-                <div class="swiper product-slider overflow-hidden py-4">
-                    <div id="product-grid" class="swiper-wrapper">
-                        
-                        <!-- Product 1 -->
-                        <div class="swiper-slide h-auto">
-                            <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" data-name="Pin sạc dự phòng 20000mAh cao cấp GUTEK" data-brand="GUTEK" data-price="250000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn h-full">
-                                <div class="p-4">
-                                    <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                                        <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-58%</span>
-                                        <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
-                                    </div>
-                                    <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">GUTEK</span>
-                                    <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
-                                    <div class="flex items-center gap-1.5 mb-2 text-xs">
-                                        <div class="flex items-center text-amber-400">
-                                            <i class="fa-solid fa-star text-[10px]"></i>
-                                            <span class="font-bold ml-1 text-slate-200">4.9</span>
-                                        </div>
-                                        <span class="text-slate-500">•</span>
-                                        <span class="text-slate-400 font-medium">Đã bán 1.8k</span>
-                                    </div>
-                                    <div class="text-rose-400 font-bold text-lg">250.000đ</div>
-                                </div>
-                                <div class="p-4 pt-0">
-                                    <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
-                                        <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
-                                    </div>
-                                    <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
-                                        <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
-                                        <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
-                                    </div>
-                                </div>
-                            </a>
+            <!-- Grid Sản Phẩm (Hiển thị 4 sản phẩm đại diện tiêu biểu) -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Product 1 -->
+                <a href="https://vt.tiktok.com/ZS9hnv1d1t3Tg-eTKej/" rel="noopener noreferrer" target="_blank" data-name="Pin sạc dự phòng 20000mAh cao cấp GUTEK" data-brand="GUTEK" data-price="250000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-58%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
                         </div>
-
-                        <!-- Product 2 -->
-                        <div class="swiper-slide h-auto">
-                            <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" data-name="Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp" data-brand="Maono Vietnam" data-price="1169000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn h-full">
-                                <div class="p-4">
-                                    <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                                        <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-20%</span>
-                                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
-                                    </div>
-                                    <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Maono Vietnam</span>
-                                    <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
-                                    <div class="flex items-center gap-1.5 mb-2 text-xs">
-                                        <div class="flex items-center text-amber-400">
-                                            <i class="fa-solid fa-star text-[10px]"></i>
-                                            <span class="font-bold ml-1 text-slate-200">5.0</span>
-                                        </div>
-                                        <span class="text-slate-500">•</span>
-                                        <span class="text-slate-400 font-medium">Đã bán 640</span>
-                                    </div>
-                                    <div class="text-rose-400 font-bold text-lg">1.169.000đ</div>
-                                </div>
-                                <div class="p-4 pt-0">
-                                    <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
-                                        <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
-                                    </div>
-                                    <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
-                                        <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
-                                        <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
-                                    </div>
-                                </div>
-                            </a>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">GUTEK</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 1.8k</span>
                         </div>
-
-                        <!-- Product 3 -->
-                        <div class="swiper-slide h-auto">
-                            <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" data-name="Màn hình máy tính Edra 22 - 24 inch 100-144Hz" data-brand="Ziczac Computer" data-price="1440000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn h-full">
-                                <div class="p-4">
-                                    <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                                        <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-28%</span>
-                                        <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
-                                    </div>
-                                    <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Ziczac Computer</span>
-                                    <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
-                                    <div class="flex items-center gap-1.5 mb-2 text-xs">
-                                        <div class="flex items-center text-amber-400">
-                                            <i class="fa-solid fa-star text-[10px]"></i>
-                                            <span class="font-bold ml-1 text-slate-200">4.8</span>
-                                        </div>
-                                        <span class="text-slate-500">•</span>
-                                        <span class="text-slate-400 font-medium">Đã bán 1.2k</span>
-                                    </div>
-                                    <div class="text-rose-400 font-bold text-lg">1.440.000đ</div>
-                                </div>
-                                <div class="p-4 pt-0">
-                                    <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
-                                        <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
-                                    </div>
-                                    <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
-                                        <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
-                                        <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Product 4 -->
-                        <div class="swiper-slide h-auto">
-                            <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" data-name="Tai nghe GAMING cho PC Laptop Điện thoại" data-brand="StaFor" data-price="62000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn h-full">
-                                <div class="p-4">
-                                    <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
-                                        <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-57%</span>
-                                        <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
-                                    </div>
-                                    <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">StaFor</span>
-                                    <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
-                                    <div class="flex items-center gap-1.5 mb-2 text-xs">
-                                        <div class="flex items-center text-amber-400">
-                                            <i class="fa-solid fa-star text-[10px]"></i>
-                                            <span class="font-bold ml-1 text-slate-200">4.9</span>
-                                        </div>
-                                        <span class="text-slate-500">•</span>
-                                        <span class="text-slate-400 font-medium">Đã bán 3.5k</span>
-                                    </div>
-                                    <div class="text-rose-400 font-bold text-lg">62.000đ</div>
-                                </div>
-                                <div class="p-4 pt-0">
-                                    <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
-                                        <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
-                                    </div>
-                                    <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
-                                        <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
-                                        <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
+                        <div class="text-rose-400 font-bold text-lg">250.000đ</div>
                     </div>
-                </div>
-                <!-- Nút điều hướng Slider -->
-                <div class="swiper-button-prev -left-2 sm:left-1"></div>
-                <div class="swiper-button-next -right-2 sm:right-1"></div>
-                <!-- Phân trang Slider -->
-                <div class="swiper-pagination mt-4 relative"></div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 2 -->
+                <a href="https://vt.tiktok.com/ZS9hn7bRFk3SG-yPqTo/" rel="noopener noreferrer" target="_blank" data-name="Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp" data-brand="Maono Vietnam" data-price="1169000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-20%</span>
+                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Maono Vietnam</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">5.0</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 640</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">1.169.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 3 -->
+                <a href="https://vt.tiktok.com/ZS9hn7va8sDcS-Od6WJ/" rel="noopener noreferrer" target="_blank" data-name="Màn hình máy tính Edra 22 - 24 inch 100-144Hz" data-brand="Ziczac Computer" data-price="1440000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-28%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Ziczac Computer</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.8</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 1.2k</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">1.440.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 4 -->
+                <a href="https://vt.tiktok.com/ZS9hn7TqdYVBs-UhMEM/" rel="noopener noreferrer" target="_blank" data-name="Tai nghe GAMING cho PC Laptop Điện thoại" data-brand="StaFor" data-price="62000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-rose-600 text-white font-bold text-xs">-57%</span>
+                            <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">StaFor</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 3.5k</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">62.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Các sản phẩm từ 5 đến 8 vẫn được giữ lại ngầm phục vụ logic tìm kiếm/lọc -->
+                <!-- Product 5 -->
+                <a href="https://vt.tiktok.com/ZS9hW2GY4fSM6-JNnOK/" rel="noopener noreferrer" target="_blank" data-name="Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu" data-brand="Tidingsk Select" data-price="233000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 950</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">233.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 6 -->
+                <a href="https://vt.tiktok.com/ZS9hWjaY3NxKE-BVr6Z/" rel="noopener noreferrer" target="_blank" data-name="Màn hình di động thông minh Azopa 16.1 inch 144Hz" data-brand="Tidingsk Select" data-price="2250000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình di động thông minh Azopa 16.1" 144Hz</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">5.0</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 410</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">2.250.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 7 -->
+                <a href="https://vt.tiktok.com/ZS9hWjQSACwMC-Mm1wX/" rel="noopener noreferrer" target="_blank" data-name="Webcam kép EMEET C60E 4K Dual với điều khiển" data-brand="Tidingsk Select" data-price="536607" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Webcam kép EMEET C60E 4K Dual với điều khiển</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.8</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 280</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">536.607đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 8 -->
+                <a href="https://vt.tiktok.com/ZS9hWj77MwH5Y-jSG56/" rel="noopener noreferrer" target="_blank" data-name="Tai nghe chụp Gaming XSTAR G93 LED RGB" data-brand="Tidingsk Select" data-price="315000" class="product-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-purple-500/60 transition-all group cursor-pointer block track-cta-btn" style="display: none;">
+                    <div class="p-4">
+                        <div class="relative rounded-xl overflow-hidden bg-slate-950 aspect-square mb-4">
+                            <span class="absolute top-2 left-2 z-10 px-2 py-1 rounded bg-amber-500 text-white font-bold text-xs">Hot</span>
+                            <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform" loading="lazy">
+                        </div>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe chụp Gaming XSTAR G93 LED RGB</h3>
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 1.1k</span>
+                        </div>
+                        <div class="text-rose-400 font-bold text-lg">315.000đ</div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <div class="w-full py-2.5 rounded-xl btn-cta-neon font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-cart-shopping"></i> Xem Giá Ưu Đãi & Chốt Đơn
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2.5 px-1 border-t border-slate-800/80 pt-2">
+                            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chính hãng 100%</span>
+                            <span><i class="fa-solid fa-truck-fast text-blue-400"></i> Freeship</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
 
             <!-- Trạng thái khi không tìm thấy sản phẩm -->
@@ -590,6 +664,7 @@
                         <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider px-2">Đánh giá nổi bật</span>
                         <span class="text-[10px] text-purple-400 font-semibold px-2"><i class="fa-solid fa-circle-play"></i> Video Review</span>
                     </div>
+                    <!-- 2. Tải Video (Lazy Loading): Dùng preload="none", poster kèm giao diện tối ưu tải khi bấm -->
                     <div class="p-1 bg-slate-950">
                         <video class="w-full h-auto rounded-lg" controls preload="none" poster="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/Logo.png" playsinline>
                             <source src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/GUTEK.mp4" type="video/mp4">
@@ -726,40 +801,8 @@
         </div>
     </footer>
 
-    <!-- Swiper JS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <!-- Scripts -->
     <script>
-      // Khởi tạo Swiper Slider cho 4 sản phẩm đại diện
-      const productSwiper = new Swiper('.product-slider', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 24,
-          },
-        },
-      });
-
       // 1. Đồng hồ đếm ngược Livestream
       function updateLiveCountdown() {
         const now = new Date();
@@ -877,8 +920,10 @@
           const brand = card.getAttribute('data-brand').toLowerCase();
           const price = parseInt(card.getAttribute('data-price'), 10);
 
+          // Kiểm tra khớp từ khóa (tìm theo tên hoặc thương hiệu)
           const matchesKeyword = name.includes(keyword) || brand.includes(keyword);
 
+          // Kiểm tra khớp khoảng giá
           let matchesPrice = true;
           if (priceRange === 'under-100k') {
             matchesPrice = price < 100000;
@@ -890,19 +935,15 @@
             matchesPrice = price > 2000000;
           }
 
-          const slideContainer = card.closest('.swiper-slide');
-
           if (matchesKeyword && matchesPrice) {
-            if (slideContainer) slideContainer.style.display = 'block';
+            card.style.display = 'flex';
             visibleCount++;
           } else {
-            if (slideContainer) slideContainer.style.display = 'none';
+            card.style.display = 'none';
           }
         });
 
-        // Cập nhật lại giao diện slider sau khi ẩn/hiện sản phẩm lọc
-        productSwiper.update();
-
+        // Hiển thị thông báo nếu không có sản phẩm nào thỏa mãn
         if (visibleCount === 0) {
           noProductsFound.classList.remove('hidden');
         } else {
@@ -926,12 +967,14 @@
       // 5. Đo lường sự kiện (Tracking Pixels) cho các nút CTA chốt đơn
       document.querySelectorAll('.track-cta-btn').forEach(button => {
         button.addEventListener('click', function() {
+          // Gửi sự kiện lên Google Analytics 4
           if (typeof gtag === 'function') {
             gtag('event', 'click_cta_checkout', {
               'event_category': 'Conversion',
               'event_label': this.href || 'CTA Button'
             });
           }
+          // Gửi sự kiện lên TikTok Pixel
           if (typeof ttq === 'object' && typeof ttq.track === 'function') {
             ttq.track('ClickButton', {
               content_name: 'TikTok Shop Checkout Button'
