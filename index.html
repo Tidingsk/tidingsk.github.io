@@ -34,11 +34,12 @@
                 <!-- CỤM TIỆN ÍCH (Gồm Đồng hồ Livestream click được + VNPAY) -->
                 <div class="flex items-center gap-1.5 sm:gap-2">
 
-                    <!-- Đồng hồ đếm ngược có gắn link đến TikTok Live -->
-                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" title="Xem TikTok LIVE" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-purple-950/50 border border-purple-500/30 text-purple-300 font-mono text-xs shadow-inner shrink-0 hover:bg-purple-900/60 hover:border-purple-400/50 transition-all">
+                    <!-- Đồng hồ đếm ngược có gắn link đến TikTok Live + Nổi bật mã giảm giá -->
+                    <a href="https://www.tiktok.com/@tidingsk/live" rel="noopener noreferrer" target="_blank" title="Xem TikTok LIVE & Nhận Voucher Độc Quyền" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-950/80 via-pink-950/80 to-purple-950/80 border border-pink-500/50 text-purple-300 font-mono text-xs shadow-lg shadow-pink-500/10 shrink-0 hover:bg-purple-900/80 hover:border-pink-400 transition-all group">
                         <i class="fa-regular fa-clock text-pink-400 animate-pulse"></i>
-                        <span class="hidden md:inline text-slate-400 font-sans text-xs">Live 23:15:</span>
-                        <span id="live-countdown" class="font-bold text-purple-200 tracking-wider">00:00:00</span>
+                        <span class="hidden md:inline text-slate-300 font-sans text-xs">Live 23:15:</span>
+                        <span id="live-countdown" class="font-bold text-pink-300 tracking-wider">00:00:00</span>
+                        <span class="ml-1 px-1.5 py-0.5 rounded-full bg-rose-500 text-white font-bold text-[10px] uppercase tracking-wider animate-bounce shadow-sm">Voucher 50%</span>
                     </a>
 
                     <!-- Nút VNPAY Logo -->
@@ -83,6 +84,16 @@
                     <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
                         Chào mừng bạn đến với gian hàng tổng hợp của Tidingsk Integrity. Nơi cung cấp đầy đủ từ pin sạc dự phòng, màn hình máy tính, thiết bị âm thanh cho đến phụ kiện thông minh chính hãng với giá tốt nhất thị trường.
                     </p>
+                    <!-- Banner Nổi Bật Ưu Đãi Livestream TikTok -->
+                    <div class="p-4 rounded-xl bg-gradient-to-r from-purple-900/40 via-pink-900/40 to-slate-900 border border-pink-500/30 flex items-center gap-3 shadow-lg">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400 shrink-0 text-xl">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <div class="text-left text-xs sm:text-sm">
+                            <span class="font-bold text-pink-300 block">🔥 Ưu Đãi Độc Quyền TikTok Live (23:15 mỗi đêm):</span>
+                            <span class="text-slate-300">Săn Mã Giảm Giá Đến <strong class="text-amber-400">50%</strong> + Freeship Toàn Quốc khi chốt đơn trực tiếp trên Live!</span>
+                        </div>
+                    </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
                         <a href="#showcase" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 transition-all">
                             <i class="fa-solid fa-bag-shopping"></i> Khám Phá Gian Hàng Ngay
@@ -170,7 +181,16 @@
                             <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/gutek.jpeg" alt="Pin sạc dự phòng GUTEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">GUTEK</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">[Tặng sạc 3 đầu] Pin sạc dự phòng 20.000mAh cao cấp</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 1.8k</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">250.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -188,7 +208,16 @@
                             <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Cục âm thanh Maono" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Maono Vietnam</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Cục âm thanh chơi game MAONO G1 NEO chuyên nghiệp</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">5.0</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 640</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">1.169.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -206,7 +235,16 @@
                             <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/edra.jpg" alt="Màn hình máy tính Edra" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Ziczac Computer</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình máy tính Edra 22 - 24 inch 100-144Hz</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.8</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 1.2k</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">1.440.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -224,7 +262,16 @@
                             <img src="https://raw.githubusercontent.com/ZynixDigitalHub/zynixdigitalhub.github.io/main/tainghe.jpg" alt="Tai nghe Gaming" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">StaFor</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe GAMING cho PC/Laptop/Điện thoại</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 3.5k</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">62.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -242,7 +289,16 @@
                             <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/keyboard.jpg" alt="Bàn phím cơ cao cấp" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu, Phím ABS Gõ Êm</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Bàn phím giả cơ cao cấp XunFox K81 LED 7 Màu, Phím ABS Gõ Êm</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 950</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">233.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -260,7 +316,16 @@
                             <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/azopa.jpg" alt="Màn hình di động Azopa" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Màn hình di động thông minh Azopa</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Màn hình di động thông minh Azopa</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">5.0</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 410</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">2.250.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -278,7 +343,16 @@
                             <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/emeet.jpg" alt="Webcam EMEET" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Webcam kép EMEET C60E 4K Dual với điều khiển, đèn RGB</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Webcam kép EMEET C60E 4K Dual với điều khiển, đèn RGB</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.8</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 280</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">536.607đ</div>
                     </div>
                     <div class="p-4 pt-0">
@@ -296,7 +370,16 @@
                             <img src="https://raw.githubusercontent.com/Tidingsk/tidingsk.github.io/main/xstar.jpg" alt="Tai nghe XSTAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         </div>
                         <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Tidingsk Select</span>
-                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-3 text-slate-200">Tai nghe chụp Gaming XSTAR G93 có mic đàm thoại, LED RGB</h3>
+                        <h3 class="font-semibold text-sm line-clamp-2 mt-1 mb-2 text-slate-200">Tai nghe chụp Gaming XSTAR G93 có mic đàm thoại, LED RGB</h3>
+                        <!-- Badge Đánh giá sao & Lượt bán -->
+                        <div class="flex items-center gap-1.5 mb-2 text-xs">
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <span class="font-bold ml-1 text-slate-200">4.9</span>
+                            </div>
+                            <span class="text-slate-500">•</span>
+                            <span class="text-slate-400 font-medium">Đã bán 1.1k</span>
+                        </div>
                         <div class="text-rose-400 font-bold text-lg">315.000đ</div>
                     </div>
                     <div class="p-4 pt-0">
