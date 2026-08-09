@@ -390,7 +390,7 @@
         </div>
     </section>
 
-   <!-- Cụm Nút Floating (Zalo + BuyMeACoffee) -->
+   <!-- Cụm Nút Floating -->
 <style>
   .floating-buttons-stack {
     position: fixed;
@@ -451,7 +451,7 @@
 </style>
 
 <div class="floating-buttons-stack">
-  <!-- Nút Zalo (SVG Inline chuẩn Zalo) -->
+  <!-- Nút Zalo -->
   <a href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-zalo" aria-label="Chat Zalo">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="#FFFFFF">
       <path d="M440.1 361.6c-11.4-18.3-25.2-34.9-41.2-49.4 20-31.4 31.6-68.5 31.6-108.3C430.5 91.4 330.3 0 206.8 0 83.2 0-17 91.4-17 203.9s100.2 203.9 223.8 203.9c32 0 62.5-6.6 90.2-18.6 30.6 28.1 70.8 45 113.8 45.8 8.1.2 14.8-6.2 15.2-14.3.4-8.1-5.6-15.1-13.6-15.8-28.7-2.7-55.2-14.6-76.1-33.3 39-25.8 68.3-64 82.2-110c.8 0 1.6 0 2.4 0 9.1 0 16.5-7.4 16.5-16.5 0-9.1-7.4-16.5-16.5-16.5zM206.8 375.8c-94.8 0-171.8-77-171.8-171.9S112 32 206.8 32s171.8 77 171.8 171.9c0 41.3-14.7 79.3-39.3 109.1-3.6 4.4-4 10.6-1 15.4 12.8 20.3 22.3 42.6 28.1 66-23.7-6.2-45.7-18.2-63.5-35-3.8-3.6-9.5-4.5-14.2-2.2-27 13.3-57.2 20.6-88.7 20.6z"/>
@@ -459,13 +459,46 @@
     </svg>
   </a>
 
-  <!-- Nút Buy Me A Coffee (SVG Inline chuẩn ly cà phê BMC) -->
-  <a href="https://buymeacoffee.com/tidingsk" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-coffee" aria-label="Donate BuyMeACoffee">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000">
-      <path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-.78-1.633-.54-.649-1.28-1.02-2.118-1.051-1.03-.039-7.927-.039-8.957 0-.838.031-1.578.402-2.118 1.051-.392.47-.661 1.035-.78 1.633l-.132.666C4.001 11.874 3.001 18.067 3 18.318c0 .878.342 1.705.962 2.326.621.62 1.448.962 2.326.962h11.424c.878 0 1.705-.342 2.326-.962.62-.621.962-1.448.962-2.326-.001-.251-1.001-6.444-2.216-11.903zM18.23 18.318c0 .283-.11.549-.31.749-.2.2-.466.31-.749.31H6.288c-.283 0-.549-.11-.749-.31-.2-.2-.31-.466-.31-.749.032-.403.953-6.07 2.053-11.024h9.436c1.1 4.954 2.021 10.621 2.053 11.024z"/>
-      <path d="M7.5 10.5h9v1.5h-9zm1 3h7v1.5h-7z"/>
-    </svg>
-  </a>
+  <!-- Nút Buy Me A Coffee -->
+<a href="https://buymeacoffee.com/tidingsk" target="_blank" rel="noopener noreferrer" class="float-btn-item btn-coffee" aria-label="Donate BuyMeACoffee">
+  <style>
+    /* Hiệu ứng khói bốc lên */
+    .steam-line {
+      animation: steamMove 1.8s infinite ease-in-out;
+      transform-origin: center;
+    }
+    .steam-line:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .steam-line:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+    @keyframes steamMove {
+      0% {
+        opacity: 0;
+        transform: translateY(1.5px);
+      }
+      50% {
+        opacity: 0.85;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-3.5px);
+      }
+    }
+  </style>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000">
+    <!-- Các dải khói bay lên -->
+    <path class="steam-line" d="M8.5 2.5c-.5.8.5 1.5 0 2.2" stroke="#000" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path class="steam-line" d="M12 1.5c-.6.8.6 1.6 0 2.4" stroke="#000" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path class="steam-line" d="M15.5 2.5c-.5.8.5 1.5 0 2.2" stroke="#000" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+
+    <!-- Thân cốc & Chi tiết -->
+    <path d="M20.216 7.415l-.132-.666c-.119-.598-.388-1.163-.78-1.633-.54-.649-1.28-1.02-2.118-1.051-1.03-.039-7.927-.039-8.957 0-.838.031-1.578.402-2.118 1.051-.392.47-.661 1.035-.78 1.633l-.132.666C4.001 12.874 3.001 19.067 3 19.318c0 .878.342 1.705.962 2.326.621.62 1.448.962 2.326.962h11.424c.878 0 1.705-.342 2.326-.962.62-.621.962-1.448.962-2.326-.001-.251-1.001-6.444-2.216-11.903zM18.23 19.318c0 .283-.11.549-.31.749-.2.2-.466.31-.749.31H6.288c-.283 0-.549-.11-.749-.31-.2-.2-.31-.466-.31-.749.032-.403.953-6.07 2.053-11.024h9.436c1.1 4.954 2.021 10.621 2.053 11.024z"/>
+    <path d="M7.5 11.5h9v1.5h-9zm1 3h7v1.5h-7z"/>
+  </svg>
+</a>
 </div>
 
     <!-- Footer -->
